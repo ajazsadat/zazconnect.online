@@ -1,65 +1,238 @@
-import Image from "next/image";
+'use client';
+
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
+import { PROVIDERS, SITE } from '@/lib/site';
 
 export default function Home() {
+  const [openFaq, setOpenFaq] = useState(0);
+
+  const faqs = [
+    {
+      q: 'Is ZazConnect an internet, TV, or security provider itself?',
+      a: `No. ${SITE.brandFull} (operated by ${SITE.legalName}) is an independent comparison and referral platform. We don’t own or operate network infrastructure, and we’re not affiliated with any single carrier. When you call, we help match you with a licensed provider who fulfills, installs, and bills for the service directly.`,
+    },
+    {
+      q: 'How do I compare internet providers in my area?',
+      a: 'We compare speed, reliability, and pricing across multiple licensed providers so you can pick the plan that fits how you use the internet — streaming, remote work, or gaming.',
+    },
+    {
+      q: 'How do I compare TV & streaming packages?',
+      a: 'We compare channel lineups, on-demand libraries, and DVR features across providers so you can see options side-by-side before choosing.',
+    },
+    {
+      q: 'Are there any installation or equipment fees?',
+      a: 'Any setup, equipment, or activation fees are set by the provider you choose, not by us. We’ll walk you through the full cost breakdown — including taxes and equipment charges — before you commit.',
+    },
+    {
+      q: 'How long do promotional prices last?',
+      a: 'Promotional pricing periods vary by provider and offer. We’ll confirm the length of any promo period and what the standard rate becomes afterward.',
+    },
+    {
+      q: 'Who do I contact for support after I’m connected?',
+      a: `After activation, technical support, billing, and account management are handled by your selected provider. You can reach us at ${SITE.phoneDisplay} for general questions, plan guidance, or help finding the right contact at your provider.`,
+    },
+  ];
+
+  const pillars = [
+    {
+      title: 'Coast-to-coast comparison',
+      body: 'From metro hubs to suburban neighborhoods, we compare provider options nationwide while keeping support personal.',
+    },
+    {
+      title: 'Up-to-date options',
+      body: 'Offers move fast. We keep comparisons current so you see relevant plans for your address and budget.',
+    },
+    {
+      title: 'Clear commitments',
+      body: 'Transparency first — honest comparisons, clear next steps, and no claim that we are the carrier.',
+    },
+  ];
+
+  const bundles = [
+    {
+      label: 'Starter',
+      title: 'Internet + Basic TV',
+      points: ['Everyday-speed internet tier', 'Local & basic channel lineup', 'Single monthly bill'],
+    },
+    {
+      label: 'Most compared',
+      title: 'Fast Internet + Full TV',
+      points: ['Higher-speed internet tier', 'Expanded channel lineup + DVR', 'Bundled equipment options'],
+      featured: true,
+    },
+    {
+      label: 'Premium',
+      title: 'Gigabit Internet + Premium TV',
+      points: ['Gigabit-tier internet available', 'Premium channels & on-demand', 'Priority installation scheduling'],
+    },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div>
+      {/* Hero — brand-first, full-bleed mesh (distinct from Eagle dark photo hero) */}
+      <section className="relative min-h-[88vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 hero-mesh" />
+        <div className="absolute -right-16 top-24 w-80 h-80 rounded-full bg-mint/20 blur-3xl animate-drift" />
+        <div className="absolute left-10 bottom-20 w-64 h-64 rounded-full bg-teal/30 blur-3xl animate-drift" />
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div className="animate-fade-up mb-8">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/images/logo.png"
+              alt={`${SITE.brandFull} logo`}
+              width={320}
+              height={169}
+              className="h-16 sm:h-20 md:h-24 w-auto"
+              priority
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white max-w-3xl leading-tight animate-fade-up-delay">
+            Compare ultra-fast internet & premium TV plans near you
+          </h1>
+          <p className="mt-5 text-lg text-[#c5dde0] max-w-2xl leading-relaxed animate-fade-up-delay-2">
+            We help you compare internet, TV, and home security plans from licensed providers in your area — so you can
+            find the option that actually fits your home and budget.
+          </p>
+          <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fade-up-delay-2">
+            <a
+              href={`tel:${SITE.phoneTel}`}
+              className="inline-flex items-center justify-center px-8 py-4 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition"
+            >
+              Call & compare now
+            </a>
+            <Link
+              href="/about"
+              className="inline-flex items-center justify-center px-8 py-4 font-semibold text-white border border-white/30 hover:bg-white/10 transition"
+            >
+              How we work
+            </Link>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* About strip */}
+      <section className="relative soft-grid border-b border-[var(--line)]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-3xl">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mb-4">About {SITE.brandFull}</h2>
+            <p className="text-muted text-lg leading-relaxed">
+              {SITE.brandFull} (operated by {SITE.legalName}) helps you compare and connect with internet, TV, and home
+              security providers across the United States. We are not a service provider ourselves — we don’t own or
+              operate network infrastructure. Services are fulfilled, installed, and billed by the licensed provider you
+              choose.
+            </p>
+          </div>
+          <div className="mt-12 grid md:grid-cols-3 gap-8">
+            {pillars.map((item) => (
+              <div key={item.title} className="border-t-2 border-teal pt-5">
+                <h3 className="font-display text-xl font-bold text-ink mb-2">{item.title}</h3>
+                <p className="text-muted text-sm leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Providers — list rows, not marketing cards */}
+      <section className="bg-white border-b border-[var(--line)] py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-3xl font-bold text-ink mb-3">Providers you can compare</h2>
+          <p className="text-muted mb-10 max-w-2xl">
+            Start with a provider page, then call us to check what’s actually available at your address.
+          </p>
+          <div className="divide-y divide-[var(--line)] border border-[var(--line)]">
+            {PROVIDERS.map((p) => (
+              <Link
+                key={p.href}
+                href={p.href}
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-5 py-6 hover:bg-[#f7fbfc] transition group"
+              >
+                <div>
+                  <p className="font-display text-2xl font-bold text-ink group-hover:text-teal transition">{p.name}</p>
+                  <p className="text-sm text-muted mt-1">{p.blurb}</p>
+                </div>
+                <span className="text-sm font-semibold text-teal">View plans →</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bundles */}
+      <section className="py-20 soft-grid">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-3xl font-bold text-ink mb-3">Bundle & save: internet + TV</h2>
+          <p className="text-muted mb-10 max-w-2xl">
+            Combining internet and TV through one provider can mean simpler billing and better value. Compare bundle
+            styles below, then call to see exact pricing for your address.
+          </p>
+          <div className="grid md:grid-cols-3 gap-0 border border-[var(--line)] bg-white">
+            {bundles.map((b) => (
+              <div
+                key={b.title}
+                className={`p-7 border-[var(--line)] md:border-r last:md:border-r-0 ${
+                  b.featured ? 'bg-[#0c1c24] text-white' : ''
+                }`}
+              >
+                <p className={`text-xs uppercase tracking-wider mb-2 ${b.featured ? 'text-mint' : 'text-teal'}`}>
+                  {b.label}
+                </p>
+                <h3 className={`font-display text-xl font-bold mb-4 ${b.featured ? 'text-white' : 'text-ink'}`}>
+                  {b.title}
+                </h3>
+                <ul className={`space-y-2 text-sm mb-6 ${b.featured ? 'text-[#c5dde0]' : 'text-muted'}`}>
+                  {b.points.map((pt) => (
+                    <li key={pt}>• {pt}</li>
+                  ))}
+                </ul>
+                <a
+                  href={`tel:${SITE.phoneTel}`}
+                  className={`inline-flex text-sm font-semibold ${
+                    b.featured ? 'text-mint hover:underline' : 'text-teal hover:underline'
+                  }`}
+                >
+                  Call to compare
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-white border-y border-[var(--line)] py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-3xl font-bold text-ink mb-8">Ask us anything</h2>
+          <div className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
+            {faqs.map((faq, index) => {
+              const isOpen = openFaq === index;
+              return (
+                <div key={faq.q}>
+                  <button
+                    type="button"
+                    className="w-full text-left py-5 flex justify-between gap-4"
+                    onClick={() => setOpenFaq(isOpen ? -1 : index)}
+                  >
+                    <span className="font-semibold text-ink">{faq.q}</span>
+                    <span className="text-teal text-xl">{isOpen ? '−' : '+'}</span>
+                  </button>
+                  {isOpen && <p className="pb-5 text-muted leading-relaxed text-[15px]">{faq.a}</p>}
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-10 text-center">
+            <p className="text-muted mb-4">Still have questions? Call a specialist.</p>
+            <a
+              href={`tel:${SITE.phoneTel}`}
+              className="inline-flex px-7 py-3.5 font-bold text-white bg-teal hover:bg-[var(--teal-deep)] transition"
+            >
+              {SITE.phoneDisplay}
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
