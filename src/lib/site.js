@@ -22,3 +22,18 @@ export const PROVIDERS = [
   { name: "Spectrum", href: "/compare/spectrum-plans", blurb: "Wide coverage with simple plan tiers" },
   { name: "AT&T Fiber", href: "/compare/att-plans", blurb: "Fiber speeds where the network reaches" },
 ];
+
+export function openLiveChat() {
+  if (typeof window === "undefined") return;
+  const api = window.Tawk_API;
+  if (api && typeof api.maximize === "function") {
+    api.maximize();
+    return;
+  }
+  window.Tawk_API = window.Tawk_API || {};
+  const previousOnLoad = window.Tawk_API.onLoad;
+  window.Tawk_API.onLoad = function () {
+    if (typeof previousOnLoad === "function") previousOnLoad();
+    window.Tawk_API.maximize();
+  };
+}

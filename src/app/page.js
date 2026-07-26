@@ -3,15 +3,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { PROVIDERS, SITE } from '@/lib/site';
+import { SITE, openLiveChat } from '@/lib/site';
+import LiveChatCta from '@/components/LiveChatCta';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState(0);
 
   const faqs = [
     {
-      q: 'Is ZazConnect an internet, TV, or security provider itself?',
-      a: `No. ${SITE.brandFull} (operated by ${SITE.legalName}) is an independent comparison and referral platform. We don’t own or operate network infrastructure, and we’re not affiliated with any single carrier. When you call, we help match you with a licensed provider who fulfills, installs, and bills for the service directly.`,
+      q: 'Are you an internet, TV, or security provider yourself?',
+      a: `No. We’re an independent comparison and referral platform operated by ${SITE.legalName}. We don’t own or operate network infrastructure, and we’re not affiliated with any single carrier. When you call or chat, we help match you with a licensed provider who fulfills, installs, and bills for the service directly.`,
     },
     {
       q: 'How do I compare internet providers in my area?',
@@ -50,6 +51,25 @@ export default function Home() {
     },
   ];
 
+  const categories = [
+    {
+      title: 'Home internet',
+      body: 'Compare fiber, cable, and fixed-wireless speed tiers for streaming, work, and multi-device homes.',
+    },
+    {
+      title: 'TV & entertainment',
+      body: 'Review live channels, on-demand libraries, and DVR options that can pair with your internet plan.',
+    },
+    {
+      title: 'Wireless & mobile',
+      body: 'Explore nationwide coverage and data plans that may bundle with home service where available.',
+    },
+    {
+      title: 'Home security',
+      body: 'Look at monitoring and smart-home options from licensed providers — equipment and terms vary by offer.',
+    },
+  ];
+
   const bundles = [
     {
       label: 'Starter',
@@ -71,7 +91,6 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero — brand-first, full-bleed mesh (distinct from Eagle dark photo hero) */}
       <section className="relative min-h-[88vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 hero-mesh" />
         <div className="absolute -right-16 top-24 w-80 h-80 rounded-full bg-mint/20 blur-3xl animate-drift" />
@@ -95,32 +114,33 @@ export default function Home() {
             find the option that actually fits your home and budget.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fade-up-delay-2">
+            <button
+              type="button"
+              onClick={openLiveChat}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition"
+            >
+              Live Chat
+            </button>
             <a
               href={`tel:${SITE.phoneTel}`}
-              className="inline-flex items-center justify-center px-8 py-4 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition"
+              className="inline-flex items-center justify-center px-8 py-4 font-bold text-white border border-white/30 hover:bg-white/10 transition"
             >
               Call & compare now
             </a>
-            <Link
-              href="/about"
-              className="inline-flex items-center justify-center px-8 py-4 font-semibold text-white border border-white/30 hover:bg-white/10 transition"
-            >
-              How we work
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* About strip */}
+      <LiveChatCta />
+
       <section className="relative soft-grid border-b border-[var(--line)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mb-4">About {SITE.brandFull}</h2>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mb-4">Independent plan comparison</h2>
             <p className="text-muted text-lg leading-relaxed">
-              {SITE.brandFull} (operated by {SITE.legalName}) helps you compare and connect with internet, TV, and home
-              security providers across the United States. We are not a service provider ourselves — we don’t own or
-              operate network infrastructure. Services are fulfilled, installed, and billed by the licensed provider you
-              choose.
+              Operated by {SITE.legalName}, we help you compare and connect with internet, TV, and home security
+              providers across the United States. We are not a service provider ourselves — we don’t own or operate
+              network infrastructure. Services are fulfilled, installed, and billed by the licensed provider you choose.
             </p>
           </div>
           <div className="mt-12 grid md:grid-cols-3 gap-8">
@@ -134,38 +154,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Providers — list rows, not marketing cards */}
       <section className="bg-white border-b border-[var(--line)] py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl font-bold text-ink mb-3">Providers you can compare</h2>
+          <h2 className="font-display text-3xl font-bold text-ink mb-3">What you can compare</h2>
           <p className="text-muted mb-10 max-w-2xl">
-            Start with a provider page, then call us to check what’s actually available at your address.
+            Tell us how you use the internet at home — we’ll help you weigh speed, price, and fit without pushing a
+            single carrier.
           </p>
-          <div className="divide-y divide-[var(--line)] border border-[var(--line)]">
-            {PROVIDERS.map((p) => (
-              <Link
-                key={p.href}
-                href={p.href}
-                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-5 py-6 hover:bg-[#f7fbfc] transition group"
-              >
-                <div>
-                  <p className="font-display text-2xl font-bold text-ink group-hover:text-teal transition">{p.name}</p>
-                  <p className="text-sm text-muted mt-1">{p.blurb}</p>
-                </div>
-                <span className="text-sm font-semibold text-teal">View plans →</span>
-              </Link>
+          <div className="grid sm:grid-cols-2 gap-0 border border-[var(--line)]">
+            {categories.map((item) => (
+              <div key={item.title} className="p-6 border-[var(--line)] sm:odd:border-r border-b last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0">
+                <h3 className="font-display text-xl font-bold text-ink mb-2">{item.title}</h3>
+                <p className="text-sm text-muted leading-relaxed">{item.body}</p>
+              </div>
             ))}
+          </div>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <button
+              type="button"
+              onClick={openLiveChat}
+              className="inline-flex items-center justify-center px-6 py-3 font-semibold text-[#0c1c24] bg-mint hover:brightness-110 transition"
+            >
+              Live Chat to compare
+            </button>
+            <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 font-semibold text-teal border border-teal/40 hover:bg-teal/5 transition">
+              Contact us
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Bundles */}
       <section className="py-20 soft-grid">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl font-bold text-ink mb-3">Bundle & save: internet + TV</h2>
           <p className="text-muted mb-10 max-w-2xl">
             Combining internet and TV through one provider can mean simpler billing and better value. Compare bundle
-            styles below, then call to see exact pricing for your address.
+            styles below, then call or chat to see exact pricing for your address.
           </p>
           <div className="grid md:grid-cols-3 gap-0 border border-[var(--line)] bg-white">
             {bundles.map((b) => (
@@ -186,21 +210,21 @@ export default function Home() {
                     <li key={pt}>• {pt}</li>
                   ))}
                 </ul>
-                <a
-                  href={`tel:${SITE.phoneTel}`}
+                <button
+                  type="button"
+                  onClick={openLiveChat}
                   className={`inline-flex text-sm font-semibold ${
                     b.featured ? 'text-mint hover:underline' : 'text-teal hover:underline'
                   }`}
                 >
-                  Call to compare
-                </a>
+                  Live Chat to compare
+                </button>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="bg-white border-y border-[var(--line)] py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl font-bold text-ink mb-8">Ask us anything</h2>
@@ -222,8 +246,14 @@ export default function Home() {
               );
             })}
           </div>
-          <div className="mt-10 text-center">
-            <p className="text-muted mb-4">Still have questions? Call a specialist.</p>
+          <div className="mt-10 text-center flex flex-col sm:flex-row gap-3 justify-center">
+            <button
+              type="button"
+              onClick={openLiveChat}
+              className="inline-flex px-7 py-3.5 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition"
+            >
+              Live Chat
+            </button>
             <a
               href={`tel:${SITE.phoneTel}`}
               className="inline-flex px-7 py-3.5 font-bold text-white bg-teal hover:bg-[var(--teal-deep)] transition"
