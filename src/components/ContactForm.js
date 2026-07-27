@@ -16,36 +16,52 @@ const INTEREST_OPTIONS = [
 const fieldClass =
   'w-full border border-[var(--line)] bg-[#f7fbfc] px-4 py-3 text-ink placeholder:text-[#8aa0a8] focus:outline-none focus:border-teal focus:ring-1 focus:ring-teal';
 
+const emptyForm = {
+  full_name: '',
+  email: '',
+  phone: '',
+  zip_code: '',
+  interested_in: '',
+  message: '',
+  consent: false,
+};
+
 export default function ContactForm() {
   const [status, setStatus] = useState('idle');
-  const [form, setForm] = useState({
-    full_name: '',
-    email: '',
-    phone: '',
-    zip_code: '',
-    interested_in: '',
-    message: '',
-    consent: false,
-  });
+  const [error, setError] = useState('');
+  const [form, setForm] = useState(emptyForm);
 
   function update(key, value) {
     setForm((prev) => ({ ...prev, [key]: value }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    if (!form.consent) return;
-    setStatus('sent');
-    // Lead capture UI — wire to API/CRM when ready
-    setForm({
-      full_name: '',
-      email: '',
-      phone: '',
-      zip_code: '',
-      interested_in: '',
-      message: '',
-      consent: false,
-    });
+    if (!form.consent || status === 'sending') return;
+
+    setStatus('sending');
+    setError('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok || !data.ok) {
+        setStatus('idle');
+        setError(data.error || 'Unable to send your message. Please try again or call us.');
+        return;
+      }
+
+      setStatus('sent');
+      setForm(emptyForm);
+    } catch {
+      setStatus('idle');
+      setError('Unable to send your message. Please try again or call us.');
+    }
   }
 
   if (status === 'sent') {
@@ -195,11 +211,14 @@ export default function ContactForm() {
         </span>
       </label>
 
+      {error ? <p className="text-sm text-red-600">{error}</p> : null}
+
       <button
         type="submit"
-        className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition"
+        disabled={status === 'sending'}
+        className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition disabled:opacity-60"
       >
-        Get My Free Quote
+        {status === 'sending' ? 'Sending…' : 'Get My Free Quote'}
       </button>
     </form>
   );
