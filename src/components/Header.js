@@ -9,6 +9,7 @@ import { PROVIDERS, SITE } from '@/lib/site';
 const nav = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },
+  { name: 'Live Agent', href: '/live-agent' },
   { name: 'Contact Us', href: '/contact' },
 ];
 

@@ -1,4 +1,5 @@
 import { SITE } from '@/lib/site';
+import ContactForm from '@/components/ContactForm';
 
 export const metadata = {
   title: `Contact Us | ${SITE.brandFull}`,
@@ -15,8 +16,8 @@ export default function ContactPage() {
               Get in touch with {SITE.legalName}
             </h1>
             <p className="text-muted text-lg leading-relaxed mb-10">
-              Want to learn more about {SITE.brandFull}? Call or email and our team will walk you through options for
-              your address.
+              Want to learn more about {SITE.brandFull}? Fill out the form or call us — our team will walk you through
+              options for your address.
             </p>
             <dl className="space-y-8">
               <div>
@@ -44,28 +45,20 @@ export default function ContactPage() {
                 </dd>
               </div>
             </dl>
-          </div>
-
-          <div className="bg-[#0c1c24] text-white p-8 md:p-10">
-            <h2 className="font-display text-2xl font-bold mb-3">Prefer to talk now?</h2>
-            <p className="text-[#c5dde0] text-sm leading-relaxed mb-8">
-              By providing your phone number when you call, you may receive texts or calls from {SITE.domain}. Consent is
-              not a condition of purchase. See our{' '}
-              <a href="/terms-conditions" className="text-mint hover:underline">
-                Terms
-              </a>{' '}
-              and{' '}
-              <a href="/privacy-policy" className="text-mint hover:underline">
-                Privacy Policy
-              </a>
-              .
-            </p>
             <a
               href={`tel:${SITE.phoneTel}`}
-              className="inline-flex w-full items-center justify-center px-6 py-4 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition"
+              className="mt-10 inline-flex items-center justify-center px-6 py-3.5 font-bold text-white bg-teal hover:bg-[var(--teal-deep)] transition"
             >
               Call {SITE.phoneDisplay}
             </a>
+          </div>
+
+          <div className="border border-[var(--line)] bg-white p-6 md:p-8 shadow-sm">
+            <h2 className="font-display text-2xl font-bold text-ink mb-2">Contact Us</h2>
+            <p className="text-muted text-sm mb-6 leading-relaxed">
+              Share a few details and we&apos;ll help you compare options available near you.
+            </p>
+            <ContactForm />
           </div>
         </div>
       </section>
