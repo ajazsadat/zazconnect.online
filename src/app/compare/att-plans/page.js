@@ -2,9 +2,9 @@ import ProviderPage from '@/components/ProviderPage';
 import { providerFaqs, providerContentSections } from '@/lib/providerContent';
 
 export const metadata = {
-  title: 'AT&T Fiber Plans | ZazConnect',
+  title: 'AT&T Internet & Cable Services | ZazConnect',
   description:
-    'Compare AT&T Fiber and Internet Air plans — independent comparison with ZazConnect / Maverick Well INC.',
+    'AT&T Internet & Cable Services — call to get assistance to compare providers. Independent comparison with ZazConnect / Maverick Well INC.',
 };
 
 export default function AttPage() {
