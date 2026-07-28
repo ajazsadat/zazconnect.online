@@ -24,13 +24,16 @@ export default function ProviderPage({
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <p className="text-mint font-semibold tracking-wide text-sm mb-3">{SITE.brandFull}</p>
           <h1 className="font-display text-4xl md:text-6xl font-extrabold text-white tracking-tight max-w-3xl">
-            {displayName} plan comparison
+            {name} Internet &amp; Cable Services
           </h1>
           <p className="mt-4 text-lg text-[#c5dde0] max-w-2xl leading-relaxed">{tagline}</p>
         </div>
       </section>
 
-      <LiveChatCta />
+      <LiveChatCta
+        title="Call to get assistance to compare providers"
+        description={`Talk through ${displayName} and other options for your address — independent guidance, not a carrier. Chat live or call our team.`}
+      />
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid lg:grid-cols-[1.2fr_0.8fr] gap-12">
         <div>
@@ -38,9 +41,9 @@ export default function ProviderPage({
             {introTitle || `Compare ${displayName} with ${SITE.brandFull}`}
           </h2>
           <p className="text-muted leading-relaxed">
-            {SITE.brandFull} (operated by {SITE.legalName}) is an independent comparison and referral platform. We help
-            you review {name} options alongside other providers so you can choose what fits — then enroll directly with
-            the provider.
+            {SITE.brandFull} (operated by {SITE.legalName}) is an independent comparison and referral platform. Call to
+            get assistance to compare providers — we help you review {name} options alongside other providers so you can
+            choose what fits, then enroll directly with the provider.
           </p>
         </div>
         <ul className="space-y-3">
@@ -116,7 +119,7 @@ export default function ProviderPage({
           href={`tel:${SITE.phoneTel}`}
           className="inline-flex items-center justify-center px-8 py-4 font-bold text-white bg-teal hover:bg-[var(--teal-deep)] transition"
         >
-          Call {SITE.phoneDisplay} to compare {name}
+          Call {SITE.phoneDisplay} to get assistance to compare providers
         </a>
       </section>
     </div>

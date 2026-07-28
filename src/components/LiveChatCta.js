@@ -2,15 +2,16 @@
 
 import { SITE, openLiveChat } from '@/lib/site';
 
-export default function LiveChatCta() {
+export default function LiveChatCta({
+  title = 'Talk with a live agent',
+  description = 'Compare options for your address — independent guidance, not a carrier. Chat live or call our team.',
+}) {
   return (
     <section className="border-y border-[var(--line)] bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div>
-          <h2 className="font-display text-2xl font-bold text-ink mb-1">Talk with a live agent</h2>
-          <p className="text-muted text-sm leading-relaxed max-w-xl">
-            Compare options for your address — independent guidance, not a carrier. Chat live or call our team.
-          </p>
+          <h2 className="font-display text-2xl font-bold text-ink mb-1">{title}</h2>
+          <p className="text-muted text-sm leading-relaxed max-w-xl">{description}</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3 shrink-0">
           <button

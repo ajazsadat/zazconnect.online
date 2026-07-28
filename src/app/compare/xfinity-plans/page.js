@@ -2,9 +2,9 @@ import ProviderPage from '@/components/ProviderPage';
 import { providerFaqs, providerContentSections } from '@/lib/providerContent';
 
 export const metadata = {
-  title: 'Xfinity Plans | ZazConnect',
+  title: 'Xfinity Internet & Cable Services | ZazConnect',
   description:
-    'Compare Xfinity internet packages — independent comparison of speeds and pricing with ZazConnect / Maverick Well INC.',
+    'Xfinity Internet & Cable Services — call to get assistance to compare providers. Independent comparison with ZazConnect / Maverick Well INC.',
 };
 
 export default function XfinityPage() {
