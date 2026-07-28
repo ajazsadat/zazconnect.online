@@ -16,9 +16,9 @@ Open [http://localhost:3000](http://localhost:3000).
 - `/` — Home
 - `/about` — About Us
 - `/contact` — Contact Us
-- `/compare/xfinity-plans`
-- `/compare/spectrum-plans`
-- `/compare/att-plans`
+- `/xfinity-plans`
+- `/spectrum-plans`
+- `/att-plans`
 - `/privacy-policy`
 - `/terms-conditions`
 

@@ -18,9 +18,9 @@ export const SITE = {
 };
 
 export const PROVIDERS = [
-  { name: "Xfinity", href: "/compare/xfinity-plans", blurb: "Flexible cable & fiber-powered options" },
-  { name: "Spectrum", href: "/compare/spectrum-plans", blurb: "Wide coverage with simple plan tiers" },
-  { name: "AT&T Fiber", href: "/compare/att-plans", blurb: "Fiber speeds where the network reaches" },
+  { name: "Xfinity", href: "/xfinity-plans", blurb: "Flexible cable & fiber-powered options" },
+  { name: "Spectrum", href: "/spectrum-plans", blurb: "Wide coverage with simple plan tiers" },
+  { name: "AT&T Fiber", href: "/att-plans", blurb: "Fiber speeds where the network reaches" },
 ];
 
 export function openLiveChat() {
