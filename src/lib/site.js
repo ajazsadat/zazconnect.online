@@ -4,7 +4,7 @@ export const SITE = {
   legalName: "Maverick Well INC",
   domain: "zazconnect.online",
   phoneDisplay: "(855) 221-7728",
-  phoneTel: "8552217728",
+  phoneTel: "(855) 221-7728",
   email: "info@zazconnect.online",
   addressLine1: "6340 N Eldridge Pkwy Ste N 117",
   addressLine2: "Houston, TX 77041",
