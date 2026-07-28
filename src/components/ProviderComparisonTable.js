@@ -78,20 +78,24 @@ export default function ProviderComparisonTable() {
     <section className="py-16 bg-white border-y border-[var(--line)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-display text-2xl md:text-3xl font-bold text-ink mb-3">
-          Provider comparison: how top internet services stack up by {SITE.brandFull}
+          Provider Comparison: How the Top Internet Services Stack Up by {SITE.brandFull}
         </h2>
         <p className="text-muted text-sm leading-relaxed max-w-4xl mb-8">
-          The information below reflects {SITE.brandFull}&apos;s independent research and observations. It is based on
-          publicly available data and internal evaluations. This content is for informational purposes only and is not
-          affiliated with or endorsed by any provider listed. Pricing, speeds, and features vary by address.
+          The information in the table below reflects {SITE.brandFull}&apos;s independent research and observations. It is
+          based on publicly available data, performance trends, and internal evaluations. This content is for
+          informational purposes only and is not affiliated with or endorsed by any of the providers listed. Pricing,
+          speeds, and features vary by address and change over time — confirm details with the provider before you
+          enroll.
         </p>
         <div className="overflow-x-auto border border-[var(--line)]">
           <table className="w-full min-w-[720px] text-left text-sm">
             <thead className="bg-[#eef5f6] text-ink">
               <tr>
-                <th className="px-4 py-3 font-semibold sticky left-0 bg-[#eef5f6] z-10 min-w-[140px]">Feature</th>
+                <th scope="col" className="px-4 py-3 font-semibold sticky left-0 bg-[#eef5f6] z-10 min-w-[140px]">
+                  Feature
+                </th>
                 {PROVIDERS.map((p) => (
-                  <th key={p.name} className="px-4 py-3 font-semibold min-w-[180px]">
+                  <th scope="col" key={p.name} className="px-4 py-3 font-semibold min-w-[180px]">
                     {p.name}
                   </th>
                 ))}
@@ -100,7 +104,10 @@ export default function ProviderComparisonTable() {
             <tbody>
               {FEATURES.map((feature, rowIndex) => (
                 <tr key={feature} className="border-t border-[var(--line)] align-top">
-                  <th className="px-4 py-3 font-semibold text-ink sticky left-0 bg-[#f7fbfc] z-10 text-left">
+                  <th
+                    scope="row"
+                    className="px-4 py-3 font-semibold text-ink sticky left-0 bg-[#f7fbfc] z-10 text-left"
+                  >
                     {feature}
                   </th>
                   {PROVIDERS.map((p) => (
