@@ -2,7 +2,20 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { Poppins, Montserrat } from 'next/font/google';
 import { SITE } from '@/lib/site';
+
+const poppins = Poppins({
+  variable: '--font-support-poppins',
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+});
+
+const montserrat = Montserrat({
+  variable: '--font-support-montserrat',
+  subsets: ['latin'],
+  weight: ['600'],
+});
 
 function PhoneIcon({ className }) {
   return (
@@ -54,79 +67,81 @@ function PhoneButton() {
 
 export default function IndependentSupportHelp({ fullscreen = false }) {
   return (
-    <div
-      className={`w-full bg-[#f4f1fb] bg-cover bg-center bg-no-repeat px-3 py-8 sm:px-4 sm:py-10 ${
-        fullscreen ? 'min-h-full box-border' : 'min-h-screen'
-      }`}
-      style={{
-        backgroundImage: "url('/images/support/bg-box.jpg')",
-        fontFamily: 'var(--font-support-poppins), Poppins, sans-serif',
-      }}
-    >
-      <div className="mx-auto flex w-full max-w-6xl flex-col items-center">
-        <h1 className="mb-2 max-w-4xl text-center text-[24px] font-bold capitalize leading-[29px] text-black md:text-[45px] md:leading-[54px]">
-          How would you like to connect for{' '}
-          <span className="text-[#5A23B9]">Internet Services and Assistance?</span>
-        </h1>
+    <div className={`${poppins.variable} ${montserrat.variable}`}>
+      <div
+        className={`box-border w-full bg-[#f4f1fb] bg-cover bg-center bg-no-repeat px-3 py-8 sm:px-4 sm:py-10 ${
+          fullscreen ? 'min-h-full' : 'min-h-screen'
+        }`}
+        style={{
+          backgroundImage: "url('/images/support/bg-box.jpg')",
+          fontFamily: 'var(--font-support-poppins), Poppins, sans-serif',
+        }}
+      >
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center">
+          <h1 className="mb-2 max-w-4xl text-center text-[24px] font-bold capitalize leading-[29px] text-black md:text-[45px] md:leading-[54px]">
+            How would you like to connect for{' '}
+            <span className="text-[#5A23B9]">Internet Services and Assistance?</span>
+          </h1>
 
-        <Image
-          src="/images/support/underline.png"
-          alt=""
-          width={113}
-          height={9}
-          className="mb-6 hidden w-[7%] max-w-[113px] md:mb-8 md:block"
-        />
+          <Image
+            src="/images/support/underline.png"
+            alt=""
+            width={113}
+            height={9}
+            className="mb-6 hidden w-[7%] max-w-[113px] md:mb-8 md:block"
+          />
 
-        <div className="flex w-full flex-col items-stretch justify-center gap-4 md:flex-row md:gap-6 lg:gap-[22px]">
-          <div
-            className="flex min-h-[46vh] w-full flex-col items-center justify-center rounded-[14px] px-4 py-6 shadow-[0px_0px_10px_0px_rgba(0,0,0,0.28)] md:min-h-[60vh] md:w-[40%] md:px-5"
-            style={{
-              backgroundImage: "url('/images/support/card-box.png')",
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-            }}
-          >
-            <Image
-              src="/images/support/human-agent-icon.png"
-              alt=""
-              width={218}
-              height={216}
-              className="mb-2 w-[35%] max-w-[120px] md:w-[45%]"
-            />
-            <h2 className="mb-2 max-w-[70%] text-center text-[24px] font-bold capitalize leading-[30px] text-white md:max-w-[61%] md:text-[34px] md:leading-[40px]">
-              Speak With A Human Agent
-            </h2>
-            <div className="mx-auto mb-1 h-[2.5px] w-[14%] bg-[#8C52F6]" />
-            <PhoneButton />
+          <div className="flex w-full flex-col items-stretch justify-center gap-4 md:flex-row md:gap-6 lg:gap-[22px]">
+            <div
+              className="flex min-h-[46vh] w-full flex-col items-center justify-center rounded-[14px] px-4 py-6 shadow-[0px_0px_10px_0px_rgba(0,0,0,0.28)] md:min-h-[60vh] md:w-[40%] md:px-5"
+              style={{
+                backgroundImage: "url('/images/support/card-box.png')",
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+              }}
+            >
+              <Image
+                src="/images/support/human-agent-icon.png"
+                alt=""
+                width={218}
+                height={216}
+                className="mb-2 w-[35%] max-w-[120px] md:w-[45%]"
+              />
+              <h2 className="mb-2 max-w-[70%] text-center text-[24px] font-bold capitalize leading-[30px] text-white md:max-w-[61%] md:text-[34px] md:leading-[40px]">
+                Speak With A Human Agent
+              </h2>
+              <div className="mx-auto mb-1 h-[2.5px] w-[14%] bg-[#8C52F6]" />
+              <PhoneButton />
+            </div>
+
+            <div className="flex min-h-[46vh] w-full flex-col items-center justify-center rounded-[14px] border-2 border-[#5C11CF] bg-white px-4 py-6 md:min-h-[60vh] md:w-[40%] md:px-5">
+              <Image
+                src="/images/support/automated-icon.png"
+                alt=""
+                width={119}
+                height={119}
+                className="mb-2 w-[57%] max-w-[110px] md:w-[74%]"
+              />
+              <h2 className="mb-2 max-w-[60%] text-center text-[24px] font-bold capitalize leading-[30px] text-black md:max-w-[61%] md:text-[34px] md:leading-[40px]">
+                Automated Support Line
+              </h2>
+              <div className="mx-auto mb-1 h-[2.5px] w-[14%] bg-[#8C52F6]" />
+              <PhoneButton />
+            </div>
           </div>
 
-          <div className="flex min-h-[46vh] w-full flex-col items-center justify-center rounded-[14px] border-2 border-[#5C11CF] bg-white px-4 py-6 md:min-h-[60vh] md:w-[40%] md:px-5">
-            <Image
-              src="/images/support/automated-icon.png"
-              alt=""
-              width={119}
-              height={119}
-              className="mb-2 w-[57%] max-w-[110px] md:w-[74%]"
-            />
-            <h2 className="mb-2 max-w-[60%] text-center text-[24px] font-bold capitalize leading-[30px] text-black md:max-w-[61%] md:text-[34px] md:leading-[40px]">
-              Automated Support Line
-            </h2>
-            <div className="mx-auto mb-1 h-[2.5px] w-[14%] bg-[#8C52F6]" />
-            <PhoneButton />
+          <div className="mt-6 flex w-full flex-col items-center px-2 md:mt-8">
+            <Link href="/" className="inline-flex items-center justify-center rounded-full bg-[#0c1c24] px-4 py-2">
+              <Image
+                src="/images/logo.png"
+                alt={`${SITE.brandFull} logo`}
+                width={160}
+                height={84}
+                className="h-10 w-auto sm:h-12"
+              />
+            </Link>
           </div>
-        </div>
-
-        <div className="mt-6 flex w-full flex-col items-center px-2 md:mt-8">
-          <Link href="/" className="inline-flex items-center justify-center rounded-full bg-[#0c1c24] px-4 py-2">
-            <Image
-              src="/images/logo.png"
-              alt={`${SITE.brandFull} logo`}
-              width={160}
-              height={84}
-              className="h-10 w-auto sm:h-12"
-            />
-          </Link>
         </div>
       </div>
     </div>

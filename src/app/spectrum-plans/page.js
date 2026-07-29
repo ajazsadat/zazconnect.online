@@ -13,6 +13,7 @@ export default function SpectrumPage() {
       name="Spectrum"
       tagline="Widely available cable internet with flexible plan options for every household size."
       introTitle="Compare Spectrum internet packages — independent comparison"
+      showMobileSupportModal
       benefits={[
         'Wide availability across many markets',
         'No data caps on many plans',

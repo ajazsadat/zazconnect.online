@@ -14,7 +14,7 @@ export default function XfinityPage() {
       brandMark="Xfinity"
       tagline="Independent comparison of Xfinity internet packages for streaming, work, and gaming."
       introTitle="Compare Xfinity internet packages — independent comparison"
-      showTopCtas
+      showMobileSupportModal
       benefits={[
         'Speed tiers for streaming, gaming & work',
         'Wide availability in many markets',
