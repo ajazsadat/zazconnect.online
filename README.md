@@ -19,6 +19,7 @@ Open [http://localhost:3000](http://localhost:3000).
 - `/xfinity-plans`
 - `/spectrum-plans`
 - `/att-plans`
+- `/independent-support-help`
 - `/privacy-policy`
 - `/terms-conditions`
 
