@@ -1,8 +1,17 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { PROVIDERS, SITE } from '@/lib/site';
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  if (pathname === '/independent-support-help') {
+    return null;
+  }
+
   return (
     <footer className="bg-[#0c1c24] text-[#9db4bb]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid md:grid-cols-3 gap-10">

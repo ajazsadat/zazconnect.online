@@ -18,6 +18,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [providersOpen, setProvidersOpen] = useState(false);
 
+  if (pathname === '/independent-support-help') {
+    return null;
+  }
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0c1c24]/95 backdrop-blur-md">
       <p className="bg-[#071418] text-[11px] sm:text-xs text-[#b7cbcf] leading-relaxed px-4 py-2 text-center border-b border-white/5">
