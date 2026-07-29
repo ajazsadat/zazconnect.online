@@ -2,6 +2,7 @@ import { SITE } from '@/lib/site';
 import ProviderFaq from '@/components/ProviderFaq';
 import ProviderComparisonTable from '@/components/ProviderComparisonTable';
 import LiveChatCta from '@/components/LiveChatCta';
+import ProviderMobileSupportModal from '@/components/ProviderMobileSupportModal';
 
 export default function ProviderPage({
   name,
@@ -13,11 +14,14 @@ export default function ProviderPage({
   plans = [],
   contentSections = [],
   faqs = [],
+  showMobileSupportModal = false,
 }) {
   const displayName = brandMark || name;
 
   return (
     <div className="bg-[var(--background)] min-h-screen">
+      {showMobileSupportModal && <ProviderMobileSupportModal />}
+
       <section className="relative overflow-hidden border-b border-[var(--line)]">
         <div className="absolute inset-0 hero-mesh opacity-95" />
         <div className="absolute inset-y-0 left-0 w-1.5 bg-mint" />
