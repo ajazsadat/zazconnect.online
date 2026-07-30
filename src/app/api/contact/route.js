@@ -27,12 +27,12 @@ export async function POST(request) {
     const full_name = String(body.full_name || '').trim();
     const email = String(body.email || '').trim();
     const phone = String(body.phone || '').trim();
-    const zip_code = String(body.zip_code || '').trim();
-    const interested_in = String(body.interested_in || '').trim();
+    const zip_code = String(body.zip_code || '').trim() || 'Not provided';
+    const interested_in = String(body.interested_in || '').trim() || 'General inquiry';
     const message = String(body.message || '').trim();
     const consent = Boolean(body.consent);
 
-    if (!full_name || !email || !phone || !zip_code || !interested_in || !message || !consent) {
+    if (!full_name || !email || !phone || !message || !consent) {
       return Response.json({ ok: false, error: 'Please fill in all required fields.' }, { status: 400 });
     }
 

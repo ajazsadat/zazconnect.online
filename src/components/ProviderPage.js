@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { SITE } from '@/lib/site';
 import ProviderFaq from '@/components/ProviderFaq';
 import ProviderComparisonTable from '@/components/ProviderComparisonTable';
+import ContactForm from '@/components/ContactForm';
 
 export default function ProviderPage({
   name,
@@ -140,13 +141,79 @@ export default function ProviderPage({
       <ProviderComparisonTable />
       <ProviderFaq faqs={faqs} />
 
-      <section className="pb-16 px-4 text-center">
-        <a
-          href={`tel:${SITE.phoneTel}`}
-          className="inline-flex items-center justify-center px-8 py-4 font-bold text-white bg-teal hover:bg-[var(--teal-deep)] transition"
-        >
-          Call {SITE.phoneDisplay} to get assistance to compare providers
-        </a>
+      <section className="w-full bg-[#eef5f7] border-t border-[var(--line)]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+            <div>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mb-5">
+                Why Choose <span className="text-teal">{SITE.brandFull}</span>?
+              </h2>
+              <p className="text-muted text-base md:text-lg leading-relaxed mb-8">
+                Getting {displayName} Internet &amp; Cable Services is easier with {SITE.brandFull}. Call to get
+                assistance to compare providers, understand features and pricing, and select the option that works best
+                for your home or business. Our team guides you every step of the way — clear, reliable, and hassle-free.
+              </p>
+              <a
+                href={`tel:${SITE.phoneTel}`}
+                className="inline-flex items-center justify-center px-7 py-3.5 font-bold text-white bg-teal hover:bg-[var(--teal-deep)] transition"
+              >
+                Call to get assistance to compare providers
+              </a>
+              <ul className="mt-8 space-y-4">
+                <li className="flex items-center gap-3 text-[#2a4550]">
+                  <span className="w-10 h-10 bg-teal/10 flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 text-teal" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                  </span>
+                  <a href={`tel:${SITE.phoneTel}`} className="font-semibold hover:text-teal transition-colors">
+                    {SITE.phoneDisplay}
+                  </a>
+                </li>
+                <li className="flex items-center gap-3 text-[#2a4550]">
+                  <span className="w-10 h-10 bg-teal/10 flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 text-teal" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                  </span>
+                  <a href={`mailto:${SITE.email}`} className="font-semibold hover:text-teal transition-colors break-all">
+                    {SITE.email}
+                  </a>
+                </li>
+                <li className="flex items-start gap-3 text-[#2a4550]">
+                  <span className="w-10 h-10 bg-teal/10 flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 text-teal" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                      <path
+                        fillRule="evenodd"
+                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span className="font-semibold leading-snug pt-2">
+                    {SITE.addressLine1}
+                    <br />
+                    {SITE.addressLine2}
+                  </span>
+                </li>
+              </ul>
+              <p className="mt-8 text-xs text-muted leading-relaxed max-w-xl">
+                Pricing, availability, and included services vary by location and plan. Promotions may require AutoPay.
+                Equipment and streaming services subject to terms and change.
+              </p>
+            </div>
+
+            <div className="border border-[var(--line)] bg-white p-7 md:p-9">
+              <h3 className="font-display text-2xl font-bold text-ink mb-6">Get Started</h3>
+              <ContactForm
+                variant="simple"
+                defaultInterest={`${displayName} Internet`}
+                idPrefix={`${String(displayName).toLowerCase().replace(/[^a-z0-9]+/g, '-')}-contact`}
+              />
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
