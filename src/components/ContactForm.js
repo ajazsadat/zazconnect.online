@@ -26,27 +26,48 @@ const emptyForm = {
   consent: false,
 };
 
-export default function ContactForm() {
+export default function ContactForm({
+  variant = 'full',
+  defaultInterest = '',
+  idPrefix = 'contact',
+  submitLabel,
+}) {
+  const isSimple = variant === 'simple';
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState('');
-  const [form, setForm] = useState(emptyForm);
+  const [form, setForm] = useState({
+    ...emptyForm,
+    interested_in: defaultInterest || '',
+  });
 
   function update(key, value) {
     setForm((prev) => ({ ...prev, [key]: value }));
+  }
+
+  function fieldId(name) {
+    return `${idPrefix}-${name}`;
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
     if (!form.consent || status === 'sending') return;
 
+    if (!isSimple && (!form.zip_code || !form.interested_in)) return;
+
     setStatus('sending');
     setError('');
 
     try {
+      const payload = {
+        ...form,
+        interested_in: form.interested_in || defaultInterest || 'General inquiry',
+        zip_code: form.zip_code || '',
+      };
+
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify(payload),
       });
       const data = await res.json().catch(() => ({}));
 
@@ -57,7 +78,7 @@ export default function ContactForm() {
       }
 
       setStatus('sent');
-      setForm(emptyForm);
+      setForm({ ...emptyForm, interested_in: defaultInterest || '' });
     } catch {
       setStatus('idle');
       setError('Unable to send your message. Please try again or call us.');
@@ -85,103 +106,140 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div>
-        <label htmlFor="full_name" className="block text-sm font-semibold text-ink mb-1.5">
-          Full name <span className="text-teal">*</span>
+        <label htmlFor={fieldId('full_name')} className="block text-sm font-semibold text-ink mb-1.5">
+          {isSimple ? 'Name' : 'Full name'} <span className="text-teal">*</span>
         </label>
         <input
-          id="full_name"
+          id={fieldId('full_name')}
           name="full_name"
           type="text"
           required
-          placeholder="Jane Smith"
+          placeholder={isSimple ? 'Your name' : 'Jane Smith'}
           value={form.full_name}
           onChange={(e) => update('full_name', e.target.value)}
           className={fieldClass}
         />
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-5">
-        <div>
-          <label htmlFor="email" className="block text-sm font-semibold text-ink mb-1.5">
-            Email <span className="text-teal">*</span>
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            placeholder="you@example.com"
-            value={form.email}
-            onChange={(e) => update('email', e.target.value)}
-            className={fieldClass}
-          />
-        </div>
-        <div>
-          <label htmlFor="phone" className="block text-sm font-semibold text-ink mb-1.5">
-            Phone <span className="text-teal">*</span>
-          </label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            required
-            placeholder="(555) 555-5555"
-            value={form.phone}
-            onChange={(e) => update('phone', e.target.value)}
-            className={fieldClass}
-          />
-        </div>
-      </div>
+      {isSimple ? (
+        <>
+          <div>
+            <label htmlFor={fieldId('email')} className="block text-sm font-semibold text-ink mb-1.5">
+              Email <span className="text-teal">*</span>
+            </label>
+            <input
+              id={fieldId('email')}
+              name="email"
+              type="email"
+              required
+              placeholder="you@example.com"
+              value={form.email}
+              onChange={(e) => update('email', e.target.value)}
+              className={fieldClass}
+            />
+          </div>
+          <div>
+            <label htmlFor={fieldId('phone')} className="block text-sm font-semibold text-ink mb-1.5">
+              Phone <span className="text-teal">*</span>
+            </label>
+            <input
+              id={fieldId('phone')}
+              name="phone"
+              type="tel"
+              required
+              placeholder="(555) 123-4567"
+              value={form.phone}
+              onChange={(e) => update('phone', e.target.value)}
+              className={fieldClass}
+            />
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label htmlFor={fieldId('email')} className="block text-sm font-semibold text-ink mb-1.5">
+                Email <span className="text-teal">*</span>
+              </label>
+              <input
+                id={fieldId('email')}
+                name="email"
+                type="email"
+                required
+                placeholder="you@example.com"
+                value={form.email}
+                onChange={(e) => update('email', e.target.value)}
+                className={fieldClass}
+              />
+            </div>
+            <div>
+              <label htmlFor={fieldId('phone')} className="block text-sm font-semibold text-ink mb-1.5">
+                Phone <span className="text-teal">*</span>
+              </label>
+              <input
+                id={fieldId('phone')}
+                name="phone"
+                type="tel"
+                required
+                placeholder="(555) 555-5555"
+                value={form.phone}
+                onChange={(e) => update('phone', e.target.value)}
+                className={fieldClass}
+              />
+            </div>
+          </div>
 
-      <div className="grid sm:grid-cols-2 gap-5">
-        <div>
-          <label htmlFor="zip_code" className="block text-sm font-semibold text-ink mb-1.5">
-            ZIP code <span className="text-teal">*</span>
-          </label>
-          <input
-            id="zip_code"
-            name="zip_code"
-            type="text"
-            required
-            inputMode="numeric"
-            placeholder="90210"
-            value={form.zip_code}
-            onChange={(e) => update('zip_code', e.target.value)}
-            className={fieldClass}
-          />
-        </div>
-        <div>
-          <label htmlFor="interested_in" className="block text-sm font-semibold text-ink mb-1.5">
-            Interested in <span className="text-teal">*</span>
-          </label>
-          <select
-            id="interested_in"
-            name="interested_in"
-            required
-            value={form.interested_in}
-            onChange={(e) => update('interested_in', e.target.value)}
-            className={fieldClass}
-          >
-            <option value="">Select an option</option>
-            {INTEREST_OPTIONS.map((opt) => (
-              <option key={opt} value={opt}>
-                {opt}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
+          <div className="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label htmlFor={fieldId('zip_code')} className="block text-sm font-semibold text-ink mb-1.5">
+                ZIP code <span className="text-teal">*</span>
+              </label>
+              <input
+                id={fieldId('zip_code')}
+                name="zip_code"
+                type="text"
+                required
+                inputMode="numeric"
+                placeholder="90210"
+                value={form.zip_code}
+                onChange={(e) => update('zip_code', e.target.value)}
+                className={fieldClass}
+              />
+            </div>
+            <div>
+              <label htmlFor={fieldId('interested_in')} className="block text-sm font-semibold text-ink mb-1.5">
+                Interested in <span className="text-teal">*</span>
+              </label>
+              <select
+                id={fieldId('interested_in')}
+                name="interested_in"
+                required
+                value={form.interested_in}
+                onChange={(e) => update('interested_in', e.target.value)}
+                className={fieldClass}
+              >
+                <option value="">Select an option</option>
+                {INTEREST_OPTIONS.map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </>
+      )}
 
       <div>
-        <label htmlFor="message" className="block text-sm font-semibold text-ink mb-1.5">
+        <label htmlFor={fieldId('message')} className="block text-sm font-semibold text-ink mb-1.5">
           Message <span className="text-teal">*</span>
         </label>
         <textarea
-          id="message"
+          id={fieldId('message')}
           name="message"
           required
           rows={4}
-          placeholder="Optional — tell us more about what you're looking for"
+          placeholder={isSimple ? 'How can we help?' : "Optional — tell us more about what you're looking for"}
           value={form.message}
           onChange={(e) => update('message', e.target.value)}
           className={`${fieldClass} resize-y min-h-[120px]`}
@@ -191,6 +249,7 @@ export default function ContactForm() {
       <label className="flex gap-3 items-start text-sm text-muted leading-relaxed cursor-pointer">
         <input
           type="checkbox"
+          id={fieldId('consent')}
           name="consent"
           required
           checked={form.consent}
@@ -216,9 +275,9 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition disabled:opacity-60"
+        className={`${isSimple ? 'w-full' : 'w-full sm:w-auto'} inline-flex items-center justify-center px-8 py-4 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition disabled:opacity-60`}
       >
-        {status === 'sending' ? 'Sending…' : 'Get My Free Quote'}
+        {status === 'sending' ? 'Sending…' : submitLabel || (isSimple ? 'Submit' : 'Get My Free Quote')}
       </button>
     </form>
   );
