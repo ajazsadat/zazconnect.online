@@ -17,24 +17,25 @@ const FEATURES = [
 ];
 
 const PROVIDERS = [
-  {
-    name: 'AT&T (Fiber)',
-    values: [
-      'Up to 5 Gbps (symmetrical)',
-      'Symmetrical (same as download) on many fiber plans',
-      'From about $35/mo (where available)',
-      'Often fewer price hikes on fiber; no annual contract on many fiber plans',
-      'Generally strong ratings in fiber markets',
-      'Fiber footprint still limited nationally',
-      'Broad mix of fiber, DSL, and fixed wireless in many markets',
-      'Fiber tends to be more consistent where available',
-      'Built-in security features on some plans',
-      'No contracts on many fiber plans',
-      'No data caps on many fiber plans',
-      'Wireless bundle discounts available in some offers',
-      'Performance, business use, work-from-home',
-    ],
-  },
+  // Temporarily disabled — restore when AT&T Fiber page is needed again
+  // {
+  //   name: 'AT&T (Fiber)',
+  //   values: [
+  //     'Up to 5 Gbps (symmetrical)',
+  //     'Symmetrical (same as download) on many fiber plans',
+  //     'From about $35/mo (where available)',
+  //     'Often fewer price hikes on fiber; no annual contract on many fiber plans',
+  //     'Generally strong ratings in fiber markets',
+  //     'Fiber footprint still limited nationally',
+  //     'Broad mix of fiber, DSL, and fixed wireless in many markets',
+  //     'Fiber tends to be more consistent where available',
+  //     'Built-in security features on some plans',
+  //     'No contracts on many fiber plans',
+  //     'No data caps on many fiber plans',
+  //     'Wireless bundle discounts available in some offers',
+  //     'Performance, business use, work-from-home',
+  //   ],
+  // },
   {
     name: 'Xfinity (Comcast)',
     values: [
