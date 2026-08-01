@@ -25,7 +25,7 @@ export default function ProviderPage({
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <p className="text-mint font-semibold tracking-wide text-sm mb-3">{SITE.brandFull}</p>
           <h1 className="font-display text-4xl md:text-6xl font-extrabold text-white tracking-tight max-w-3xl">
-            {name} Internet &amp; Cable Services
+            {`${name} Internet & Cable Services`}
           </h1>
           <p className="mt-4 text-lg text-[#c5dde0] max-w-2xl leading-relaxed">{tagline}</p>
         </div>
@@ -149,9 +149,7 @@ export default function ProviderPage({
                 Why Choose <span className="text-teal">{SITE.brandFull}</span>?
               </h2>
               <p className="text-muted text-base md:text-lg leading-relaxed mb-8">
-                Getting {displayName} Internet &amp; Cable Services is easier with {SITE.brandFull}. Call to get
-                assistance to compare providers, understand features and pricing, and select the option that works best
-                for your home or business. Our team guides you every step of the way — clear, reliable, and hassle-free.
+                {`Getting ${displayName} Internet & Cable Services is easier with ${SITE.brandFull}. Call to get assistance to compare providers, understand features and pricing, and select the option that works best for your home or business. Our team guides you every step of the way — clear, reliable, and hassle-free.`}
               </p>
               <a
                 href={`tel:${SITE.phoneTel}`}
