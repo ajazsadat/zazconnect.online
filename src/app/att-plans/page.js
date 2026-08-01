@@ -1,3 +1,12 @@
+import { notFound } from 'next/navigation';
+
+// Temporarily disabled — AT&T Fiber provider page not needed for now.
+// Restore the ProviderPage below when ready to re-enable /att-plans.
+export default function AttPage() {
+  notFound();
+}
+
+/*
 import ProviderPage from '@/components/ProviderPage';
 import { providerFaqs, providerContentSections } from '@/lib/providerContent';
 
@@ -51,3 +60,4 @@ export default function AttPage() {
     />
   );
 }
+*/
