@@ -19,7 +19,7 @@ const body = Source_Sans_3({
 export const metadata = {
   title: 'ZazConnect | Compare Ultra-Fast Internet & Premium TV Plans',
   description:
-    'ZazConnect (operated by Maverick Well INC) helps you compare internet, TV, and home security plans from licensed providers — independent comparison and referral.',
+    'ZazConnect (operated by Jari & Kinza Corporation) helps you compare internet, TV, and home security plans from licensed providers — independent comparison and referral.',
   keywords: 'ZazConnect, compare internet plans, fiber internet, cable TV, Houston',
 };
 

@@ -1,7 +1,7 @@
 export const SITE = {
   brand: "ZazConnect",
   brandFull: "ZazConnect",
-  legalName: "Maverick Well INC",
+  legalName: "Jari & Kinza Corporation",
   domain: "zazconnect.online",
   phoneDisplay: "(855) 221-7728",
   phoneTel: "(855) 221-7728",
@@ -9,14 +9,14 @@ export const SITE = {
   addressLine1: "6340 N Eldridge Pkwy Ste N 117",
   addressLine2: "Houston, TX 77041",
   topDisclaimer:
-    "Maverick Well INC, operating zazconnect.online — helps you compare top internet and TV plans from leading and trusted providers available in your area.",
+    "Jari & Kinza Corporation, operating zazconnect.online — helps you compare top internet and TV plans from leading and trusted providers available in your area.",
   spectrumHeaderDisclaimer:
     "ZazConnect is an independent comparison platform — not Spectrum, Charter, or any other carrier. We do not provide customer service for these carriers. For existing customer support, please contact your provider directly.",
   xfinityHeaderDisclaimer:
     "ZazConnect is an independent comparison platform — not Xfinity, Comcast, or any other carrier. We do not provide customer service for these carriers. For existing customer support, please contact your provider directly.",
   footerDisclaimer: [
-    "zazconnect.online is operated by Maverick Well INC, an independent comparison and referral company that helps consumers discover and compare internet, TV, phone, and wireless service options available in the United States.",
-    "Maverick Well INC does not own, operate, install, or directly provide telecommunications, internet, cable TV, or wireless services. All services featured on this website are offered, installed, billed, and supported exclusively by their respective third-party service providers.",
+    "zazconnect.online is operated by Jari & Kinza Corporation, an independent comparison and referral company that helps consumers discover and compare internet, TV, phone, and wireless service options available in the United States.",
+    "Jari & Kinza Corporation does not own, operate, install, or directly provide telecommunications, internet, cable TV, or wireless services. All services featured on this website are offered, installed, billed, and supported exclusively by their respective third-party service providers.",
     "Our role is limited to providing informational resources and connecting interested consumers with available service providers. Decisions regarding service availability, pricing, installation, billing, technical support, and account management are made solely by the applicable telecommunications provider.",
   ],
 };
