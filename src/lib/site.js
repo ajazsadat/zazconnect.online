@@ -9,7 +9,11 @@ export const SITE = {
   addressLine1: "6340 N Eldridge Pkwy Ste N 117",
   addressLine2: "Houston, TX 77041",
   topDisclaimer:
-    "Reseller & Compliance Disclosure: ZazConnect (operated by Maverick Well INC) is an independent comparison and referral platform. We are not an internet, cable, wireless, or home security service provider ourselves, and we do not own or operate any telecommunications network infrastructure. We help connect you with licensed third-party providers. All service agreements, installation, billing, and customer support are provided directly by the selected provider under that provider’s own terms. Pricing, availability, and promotions are determined by each provider, may vary by location, and are subject to change without notice.",
+    "Maverick Well INC, operating zazconnect.online — helps you compare top internet and TV plans from leading and trusted providers available in your area.",
+  spectrumHeaderDisclaimer:
+    "ZazConnect is an independent comparison platform — not Spectrum, Charter, or any other carrier. We do not provide customer service for these carriers. For existing customer support, please contact your provider directly.",
+  xfinityHeaderDisclaimer:
+    "ZazConnect is an independent comparison platform — not Xfinity, Comcast, or any other carrier. We do not provide customer service for these carriers. For existing customer support, please contact your provider directly.",
   footerDisclaimer: [
     "zazconnect.online is operated by Maverick Well INC, an independent comparison and referral company that helps consumers discover and compare internet, TV, phone, and wireless service options available in the United States.",
     "Maverick Well INC does not own, operate, install, or directly provide telecommunications, internet, cable TV, or wireless services. All services featured on this website are offered, installed, billed, and supported exclusively by their respective third-party service providers.",
