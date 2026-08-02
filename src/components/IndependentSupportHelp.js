@@ -70,7 +70,7 @@ export default function IndependentSupportHelp({ fullscreen = false }) {
         </h1>
 
         <div className="grid w-full gap-4 md:grid-cols-2 md:gap-5">
-          <div className="flex flex-col items-start border border-[var(--line)] bg-white p-5 sm:p-6">
+          <div className="flex flex-col border border-[var(--line)] bg-white p-5 sm:p-6">
             <Image
               src="/images/support/human-agent-icon.png"
               alt=""
@@ -78,6 +78,10 @@ export default function IndependentSupportHelp({ fullscreen = false }) {
               height={216}
               className="mb-4 h-auto w-[28%] max-w-[88px]"
             />
+            <h2 className="font-display text-xl font-bold text-ink sm:text-2xl">Phone Call</h2>
+            <p className="mt-2 mb-5 flex-grow text-sm text-muted leading-relaxed sm:text-base">
+              to speak with a live agent
+            </p>
             <a
               href={`tel:${SITE.phoneTel}`}
               className="mt-auto inline-flex w-full items-center justify-center gap-2 px-5 py-3.5 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition"
@@ -87,11 +91,12 @@ export default function IndependentSupportHelp({ fullscreen = false }) {
             </a>
           </div>
 
-          <div className="flex flex-col items-start border border-[var(--line)] bg-white p-5 sm:p-6">
+          <div className="flex flex-col border border-[var(--line)] bg-white p-5 sm:p-6">
             <div className="mb-4 flex h-11 w-11 items-center justify-center bg-teal/10 text-teal">
               <MessageIcon className="h-5 w-5" />
             </div>
-            <p className="mb-4 text-sm text-muted leading-relaxed">
+            <h2 className="font-display text-xl font-bold text-ink sm:text-2xl">Contact Form</h2>
+            <p className="mt-2 mb-5 flex-grow text-sm text-muted leading-relaxed sm:text-base">
               Prefer not to call? Fill out our contact form and we&apos;ll follow up.
             </p>
             <Link
