@@ -3,7 +3,7 @@ import { SITE } from '@/lib/site';
 
 export const metadata = {
   title: `Independent Support Help | ${SITE.brandFull}`,
-  description: `Get help comparing providers with ${SITE.brandFull}. Call a live agent or send a message — independent comparison, not affiliated with any carrier.`,
+  description: `Speak with a live agent from ${SITE.brandFull}. Call now and we'll walk you through your options — independent comparison, not affiliated with any carrier.`,
 };
 
 export default function Page() {
