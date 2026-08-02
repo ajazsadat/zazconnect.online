@@ -21,12 +21,9 @@ export default function LiveAgentClient() {
           />
         </Link>
 
-        <h1 className="mb-2 max-w-3xl text-center font-display text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
-          Speak with a live agent
-        </h1>
-        <p className="mb-6 max-w-2xl text-center text-sm text-muted leading-relaxed sm:text-base">
+        <h1 className="mb-6 max-w-3xl text-center font-display text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
           Call now and we&apos;ll walk you through your options.
-        </p>
+        </h1>
 
         <div className="grid w-full gap-4 md:grid-cols-2 md:gap-5">
           <div className="flex flex-col border border-[var(--line)] bg-white p-5 sm:p-6">
