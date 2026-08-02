@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { SITE } from '@/lib/site';
 import ProviderFaq from '@/components/ProviderFaq';
 import ProviderComparisonTable from '@/components/ProviderComparisonTable';
+import ProviderTopicTabs from '@/components/ProviderTopicTabs';
 import ContactForm from '@/components/ContactForm';
 
 export default function ProviderPage({
@@ -14,6 +15,7 @@ export default function ProviderPage({
   plans = [],
   contentSections = [],
   faqs = [],
+  topicTabs = [],
 }) {
   const displayName = brandMark || name;
 
@@ -61,6 +63,10 @@ export default function ProviderPage({
           </a>
         </div>
       </section>
+
+      {topicTabs.length > 0 && (
+        <ProviderTopicTabs ariaLabel={`${name} topics`} tabs={topicTabs} />
+      )}
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid lg:grid-cols-[1.2fr_0.8fr] gap-12">
         <div>

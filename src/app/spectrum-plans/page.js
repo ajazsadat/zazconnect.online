@@ -7,12 +7,20 @@ export const metadata = {
     'Spectrum Internet & Cable Services — call to get assistance to compare providers. Independent comparison with ZazConnect / Maverick Wells Inc.',
 };
 
+const SPECTRUM_TOPIC_TABS = [
+  { label: 'About Spectrum', hash: '' },
+  { label: 'Internet', hash: 'internet' },
+  { label: 'TV', hash: 'tv' },
+  { label: 'Customer Service', hash: 'customer-service' },
+];
+
 export default function SpectrumPage() {
   return (
     <ProviderPage
       name="Spectrum"
       tagline="Widely available cable internet with flexible plan options for every household size."
       introTitle="Compare Spectrum internet packages — independent comparison"
+      topicTabs={SPECTRUM_TOPIC_TABS}
       benefits={[
         'Wide availability across many markets',
         'No data caps on many plans',
