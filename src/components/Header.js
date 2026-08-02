@@ -25,7 +25,7 @@ export default function Header() {
   const [providersOpen, setProvidersOpen] = useState(false);
   const headerDisclaimer = headerDisclaimerForPath(pathname);
 
-  if (pathname === '/independent-support-help') {
+  if (pathname === '/independent-support-help' || pathname === '/live-agent') {
     return null;
   }
 

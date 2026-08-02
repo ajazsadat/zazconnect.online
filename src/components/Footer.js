@@ -8,7 +8,7 @@ import { PROVIDERS, SITE } from '@/lib/site';
 export default function Footer() {
   const pathname = usePathname();
 
-  if (pathname === '/independent-support-help') {
+  if (pathname === '/independent-support-help' || pathname === '/live-agent') {
     return null;
   }
 
