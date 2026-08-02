@@ -3,7 +3,7 @@ import { SITE } from '@/lib/site';
 
 export const metadata = {
   title: `Live Agent Help | ${SITE.brandFull}`,
-  description: `Connect with ${SITE.brandFull} by phone or live chat for independent internet plan comparison and assistance. Not affiliated with any carrier.`,
+  description: `Speak with a live agent from ${SITE.brandFull}. Call now and we'll walk you through your options — independent comparison, not affiliated with any carrier.`,
 };
 
 export default function Page() {
