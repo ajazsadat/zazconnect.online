@@ -1,6 +1,6 @@
 # ZazConnect (zazconnect.online)
 
-Next.js site for **ZazConnect** — independent internet/TV comparison and referral platform operated by **Maverick Well INC**.
+Next.js site for **ZazConnect** — independent internet/TV comparison and referral platform operated by **Maverick Wells Inc**.
 
 ## Run locally
 
