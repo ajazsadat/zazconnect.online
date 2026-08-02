@@ -5,6 +5,56 @@ import ProviderComparisonTable from '@/components/ProviderComparisonTable';
 import ProviderTopicTabs from '@/components/ProviderTopicTabs';
 import ContactForm from '@/components/ContactForm';
 
+function ServiceGlanceIcon({ name: iconName }) {
+  const common = {
+    className: 'w-6 h-6 text-teal',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 1.75,
+    viewBox: '0 0 24 24',
+    'aria-hidden': true,
+  };
+
+  if (iconName === 'tv') {
+    return (
+      <svg {...common}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5v10.5H3.75V5.25zM8.25 19.5h7.5M12 15.75v3.75" />
+      </svg>
+    );
+  }
+  if (iconName === 'phone') {
+    return (
+      <svg {...common}>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a1.5 1.5 0 001.5-1.5v-2.1a1.5 1.5 0 00-1.15-1.46l-3.05-.76a1.5 1.5 0 00-1.55.58l-.72 1.01a11.28 11.28 0 01-5.3-5.3l1.01-.72a1.5 1.5 0 00.58-1.55l-.76-3.05A1.5 1.5 0 007.85 4.5H5.75a1.5 1.5 0 00-1.5 1.5v.75z"
+        />
+      </svg>
+    );
+  }
+  if (iconName === 'mobile') {
+    return (
+      <svg {...common}>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M9 3.75h6A1.5 1.5 0 0116.5 5.25v13.5a1.5 1.5 0 01-1.5 1.5H9a1.5 1.5 0 01-1.5-1.5V5.25A1.5 1.5 0 019 3.75zM12 17.25h.008v.008H12v-.008z"
+        />
+      </svg>
+    );
+  }
+  return (
+    <svg {...common}>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M8.288 15.038a5.25 5.25 0 017.424 0M5.136 11.886a9.75 9.75 0 0113.728 0M2 8.75a14.25 14.25 0 0120 0M12 18.75h.008v.008H12v-.008z"
+      />
+    </svg>
+  );
+}
+
 export default function ProviderPage({
   name,
   brandMark,
@@ -16,6 +66,7 @@ export default function ProviderPage({
   contentSections = [],
   faqs = [],
   topicTabs = [],
+  servicesGlance,
 }) {
   const displayName = brandMark || name;
 
@@ -141,6 +192,34 @@ export default function ProviderPage({
               <p className="text-muted leading-relaxed">{section.body}</p>
             </div>
           ))}
+        </section>
+      )}
+
+      {servicesGlance?.items?.length > 0 && (
+        <section className="border-y border-[var(--line)] bg-[#f7fbfc] py-14 md:py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mb-10">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-ink mb-3">
+                {servicesGlance.title || `${name} Services at a Glance`}
+              </h2>
+              {servicesGlance.intro && (
+                <p className="text-muted leading-relaxed">{servicesGlance.intro}</p>
+              )}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+              {servicesGlance.items.map((item) => (
+                <div key={item.title} className="flex gap-4">
+                  <span className="w-12 h-12 shrink-0 bg-teal/10 flex items-center justify-center">
+                    <ServiceGlanceIcon name={item.icon} />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-xl font-bold text-ink mb-2">{item.title}</h3>
+                    <p className="text-muted text-[15px] leading-relaxed">{item.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
       )}
 
