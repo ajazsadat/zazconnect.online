@@ -83,9 +83,13 @@ export default function IndependentSupportHelp({ fullscreen = false }) {
 
         <div className="grid w-full gap-5 md:grid-cols-2 md:gap-6 animate-fade-up-delay-2">
           <div className="flex flex-col border border-[var(--line)] bg-white p-7 sm:p-9">
-            <div className="mb-5 flex h-12 w-12 items-center justify-center bg-teal/10 text-teal">
-              <PhoneIcon className="h-6 w-6" />
-            </div>
+            <Image
+              src="/images/support/human-agent-icon.png"
+              alt=""
+              width={218}
+              height={216}
+              className="mb-5 h-auto w-[35%] max-w-[120px]"
+            />
             <h2 className="font-display text-2xl font-bold text-ink sm:text-[28px]">Speak With A Live Agent</h2>
             <p className="mt-3 flex-grow text-muted leading-relaxed">
               Call now and we&apos;ll walk you through your options.
