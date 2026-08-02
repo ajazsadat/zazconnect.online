@@ -14,9 +14,11 @@ export const SITE = {
     "ZazConnect is an independent comparison platform — not Spectrum, Charter, or any other carrier. We do not provide customer service for these carriers. For existing customer support, please contact your provider directly.",
   xfinityHeaderDisclaimer:
     "ZazConnect is an independent comparison platform — not Xfinity, Comcast, or any other carrier. We do not provide customer service for these carriers. For existing customer support, please contact your provider directly.",
+  carrierDisclaimer:
+    "We are not affiliated with Spectrum, Xfinity, AT&T, Verizon, Frontier, Windstream, Brightspeed, or any other carrier.",
   footerDisclaimer: [
     "zazconnect.online is operated by Jari & Kinza Corporation, an independent comparison and referral company that helps consumers discover and compare internet, TV, phone, and wireless service options available in the United States.",
-    "Jari & Kinza Corporation does not own, operate, install, or directly provide telecommunications, internet, cable TV, or wireless services. All services featured on this website are offered, installed, billed, and supported exclusively by their respective third-party service providers.",
+    "Jari & Kinza Corporation does not own, operate, install, or directly provide telecommunications, internet, cable TV, or wireless services. All services featured on this website are offered, installed, billed, and supported exclusively by their respective third-party service providers. We are not affiliated with Spectrum, Xfinity, AT&T, Verizon, Frontier, Windstream, Brightspeed, or any other carrier.",
     "Our role is limited to providing informational resources and connecting interested consumers with available service providers. Decisions regarding service availability, pricing, installation, billing, technical support, and account management are made solely by the applicable telecommunications provider.",
   ],
 };
