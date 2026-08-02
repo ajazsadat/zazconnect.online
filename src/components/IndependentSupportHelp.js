@@ -74,11 +74,10 @@ export default function IndependentSupportHelp({ fullscreen = false }) {
         </Link>
 
         <h1 className="mb-3 max-w-3xl text-center font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl md:text-5xl animate-fade-up-delay">
-          How Would You Like To Get Help Comparing Providers?
+          Speak with a live agent
         </h1>
         <p className="mb-10 max-w-2xl text-center text-base text-muted leading-relaxed sm:text-lg animate-fade-up-delay">
-          Choose how you want to connect with {SITE.brandFull} — independent comparison help, not carrier account
-          support.
+          Call now and we&apos;ll walk you through your options.
         </p>
 
         <div className="grid w-full gap-5 md:grid-cols-2 md:gap-6 animate-fade-up-delay-2">
