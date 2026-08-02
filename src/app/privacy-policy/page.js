@@ -11,10 +11,12 @@ export default function PrivacyPage() {
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="font-display text-4xl font-extrabold text-ink mb-8">Privacy Policy</h1>
         <div className="space-y-6 text-muted leading-relaxed text-[15px]">
+          <h2 className="font-display text-xl font-bold text-ink">What This Policy Covers</h2>
           <p>
-            This Privacy Policy describes how {SITE.legalName} (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;),
-            operating {SITE.domain} as {SITE.brandFull}, collects, uses, and shares information when you visit our
-            website or contact us.
+            {`${SITE.brandFull} ("we," "us," "our"), operated by ${SITE.legalName}, manages this website and associated promotional brands. This Privacy Policy describes how we collect, use, and share information when you visit our website or contact us.`}
+          </p>
+          <p>
+            {`${SITE.brandFull} is an independent comparison resource. We do not provide internet, TV, or phone services directly, and we are not affiliated with Spectrum, Xfinity, AT&T, Verizon, Frontier, Windstream, Brightspeed, or any other carrier.`}
           </p>
           <h2 className="font-display text-xl font-bold text-ink pt-4">Information we collect</h2>
           <p>

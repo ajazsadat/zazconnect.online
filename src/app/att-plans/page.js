@@ -13,7 +13,7 @@ import { providerFaqs, providerContentSections } from '@/lib/providerContent';
 export const metadata = {
   title: 'AT&T Internet & Cable Services | ZazConnect',
   description:
-    'AT&T Internet & Cable Services — call to get assistance to compare providers. Independent comparison with ZazConnect / Maverick Well INC.',
+    'AT&T Internet & Cable Services — call to get assistance to compare providers. Independent comparison with ZazConnect / Jari & Kinza Corporation.',
 };
 
 export default function AttPage() {

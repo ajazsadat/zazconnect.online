@@ -13,10 +13,17 @@ const nav = [
   { name: 'Contact Us', href: '/contact' },
 ];
 
+function headerDisclaimerForPath(pathname) {
+  if (pathname === '/spectrum-plans') return SITE.spectrumHeaderDisclaimer;
+  if (pathname === '/xfinity-plans') return SITE.xfinityHeaderDisclaimer;
+  return SITE.topDisclaimer;
+}
+
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [providersOpen, setProvidersOpen] = useState(false);
+  const headerDisclaimer = headerDisclaimerForPath(pathname);
 
   if (pathname === '/independent-support-help') {
     return null;
@@ -25,7 +32,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0c1c24]/95 backdrop-blur-md">
       <p className="bg-[#071418] text-[11px] sm:text-xs text-[#b7cbcf] leading-relaxed px-4 py-2 text-center border-b border-white/5">
-        {SITE.topDisclaimer}
+        {headerDisclaimer}
       </p>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center shrink-0">

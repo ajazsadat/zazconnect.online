@@ -4,7 +4,7 @@ import { providerFaqs, providerContentSections } from '@/lib/providerContent';
 export const metadata = {
   title: 'Xfinity Internet & Cable Services | ZazConnect',
   description:
-    'Xfinity Internet & Cable Services — call to get assistance to compare providers. Independent comparison with ZazConnect / Maverick Well INC.',
+    'Xfinity Internet & Cable Services — call to get assistance to compare providers. Independent comparison with ZazConnect / Jari & Kinza Corporation.',
 };
 
 export default function XfinityPage() {
