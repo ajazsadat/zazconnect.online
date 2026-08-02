@@ -4,7 +4,7 @@ import { providerFaqs, providerContentSections } from '@/lib/providerContent';
 export const metadata = {
   title: 'Spectrum Internet & Cable Services | ZazConnect',
   description:
-    'Spectrum Internet & Cable Services — call to get assistance to compare providers. Independent comparison with ZazConnect / Jari & Kinza Corporation.',
+    'Spectrum Internet & Cable Services — call to get assistance to compare providers. Independent comparison with ZazConnect / Maverick Well INC.',
 };
 
 export default function SpectrumPage() {
