@@ -52,74 +52,61 @@ export default function IndependentSupportHelp({ fullscreen = false }) {
       }`}
     >
       <div className="absolute inset-0 soft-grid opacity-70" aria-hidden="true" />
-      <div
-        className="pointer-events-none absolute -right-20 top-10 h-72 w-72 rounded-full bg-mint/20 blur-3xl animate-drift"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -left-16 bottom-16 h-64 w-64 rounded-full bg-teal/15 blur-3xl animate-drift"
-        aria-hidden="true"
-      />
 
-      <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <Link href="/" className="mb-8 inline-flex items-center justify-center animate-fade-up">
+      <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+        <Link href="/" className="mb-5 inline-flex items-center justify-center">
           <Image
             src="/images/logo.png"
             alt={`${SITE.brandFull} logo`}
             width={180}
             height={95}
-            className="h-12 w-auto sm:h-14"
+            className="h-10 w-auto sm:h-12"
             priority
           />
         </Link>
 
-        <h1 className="mb-3 max-w-3xl text-center font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl md:text-5xl animate-fade-up-delay">
+        <h1 className="mb-2 max-w-3xl text-center font-display text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
           Speak with a live agent
         </h1>
-        <p className="mb-10 max-w-2xl text-center text-base text-muted leading-relaxed sm:text-lg animate-fade-up-delay">
+        <p className="mb-6 max-w-2xl text-center text-sm text-muted leading-relaxed sm:text-base">
           Call now and we&apos;ll walk you through your options.
         </p>
 
-        <div className="grid w-full gap-5 md:grid-cols-2 md:gap-6 animate-fade-up-delay-2">
-          <div className="flex flex-col border border-[var(--line)] bg-white p-7 sm:p-9">
+        <div className="grid w-full gap-4 md:grid-cols-2 md:gap-5">
+          <div className="flex flex-col items-start border border-[var(--line)] bg-white p-5 sm:p-6">
             <Image
               src="/images/support/human-agent-icon.png"
               alt=""
               width={218}
               height={216}
-              className="mb-5 h-auto w-[35%] max-w-[120px]"
+              className="mb-4 h-auto w-[28%] max-w-[88px]"
             />
-            <h2 className="font-display text-2xl font-bold text-ink sm:text-[28px]">Speak With A Live Agent</h2>
-            <p className="mt-3 flex-grow text-muted leading-relaxed">
-              Call now and we&apos;ll walk you through your options.
-            </p>
             <a
               href={`tel:${SITE.phoneTel}`}
-              className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3.5 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition"
+              className="mt-auto inline-flex w-full items-center justify-center gap-2 px-5 py-3.5 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition"
             >
               <PhoneIcon className="h-5 w-5" />
               {SITE.phoneDisplay}
             </a>
           </div>
 
-          <div className="flex flex-col border border-[var(--line)] bg-white p-7 sm:p-9">
-            <div className="mb-5 flex h-12 w-12 items-center justify-center bg-teal/10 text-teal">
-              <MessageIcon className="h-6 w-6" />
+          <div className="flex flex-col items-start border border-[var(--line)] bg-white p-5 sm:p-6">
+            <div className="mb-4 flex h-11 w-11 items-center justify-center bg-teal/10 text-teal">
+              <MessageIcon className="h-5 w-5" />
             </div>
-            <h2 className="font-display text-2xl font-bold text-ink sm:text-[28px]">Send Us a Message</h2>
-            <p className="mt-3 flex-grow text-muted leading-relaxed">
+            <p className="mb-4 text-sm text-muted leading-relaxed">
               Prefer not to call? Fill out our contact form and we&apos;ll follow up.
             </p>
             <Link
               href="/contact"
-              className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3.5 font-bold text-white bg-teal hover:bg-[var(--teal-deep)] transition"
+              className="mt-auto inline-flex w-full items-center justify-center gap-2 px-5 py-3.5 font-bold text-white bg-teal hover:bg-[var(--teal-deep)] transition"
             >
               Go to Contact Form
             </Link>
           </div>
         </div>
 
-        <p className="page-disclaimer mt-10 max-w-3xl text-center text-sm text-muted leading-relaxed">
+        <p className="page-disclaimer mt-6 max-w-3xl text-center text-xs text-muted leading-relaxed sm:text-sm">
           {`${SITE.brandFull} is an independent comparison resource. We do not provide internet, TV, or phone services directly, and we are not affiliated with Spectrum, Xfinity, AT&T, Verizon, Frontier, Windstream, Brightspeed, or any other carrier. For billing or existing account support, please contact your provider directly.`}
         </p>
       </div>
