@@ -2,147 +2,123 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Poppins, Montserrat } from 'next/font/google';
 import { SITE } from '@/lib/site';
-
-const poppins = Poppins({
-  variable: '--font-support-poppins',
-  subsets: ['latin'],
-  weight: ['400', '600', '700'],
-});
-
-const montserrat = Montserrat({
-  variable: '--font-support-montserrat',
-  subsets: ['latin'],
-  weight: ['600'],
-});
 
 function PhoneIcon({ className }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="36"
-      height="36"
-      viewBox="0 0 50 50"
+      viewBox="0 0 24 24"
       fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
       aria-hidden="true"
       className={className}
     >
       <path
-        d="M38.66 21.6564C37.5957 21.6564 36.7542 20.7901 36.7542 19.7506C36.7542 18.8349 35.8385 16.9291 34.304 15.2709C32.7942 13.6621 31.136 12.7216 29.75 12.7216C28.6857 12.7216 27.8442 11.8554 27.8442 10.8159C27.8442 9.7764 28.7105 8.91016 29.75 8.91016C32.225 8.91016 34.8237 10.2467 37.1007 12.6474C39.2292 14.8996 40.5905 17.6964 40.5905 19.7259C40.5905 20.7901 39.7242 21.6564 38.66 21.6564Z"
-        fill="#6713DB"
-      />
-      <path
-        d="M47.5939 21.6562C46.5296 21.6562 45.6881 20.7899 45.6881 19.7504C45.6881 10.9642 38.5354 3.83624 29.7739 3.83624C28.7097 3.83624 27.8682 2.96999 27.8682 1.93049C27.8682 0.890998 28.7097 0 29.7492 0C40.6391 0 49.4996 8.86047 49.4996 19.7504C49.4996 20.7899 48.6334 21.6562 47.5939 21.6562Z"
-        fill="#6713DB"
-      />
-      <path
-        d="M22.3987 32.0512L17.82 36.6299C16.8547 37.5951 15.3202 37.5951 14.3302 36.6546C14.058 36.3824 13.7857 36.1349 13.5135 35.8627C10.9642 33.2887 8.66248 30.5909 6.60823 27.7694C4.57874 24.9479 2.94524 22.1264 1.75725 19.3297C0.593998 16.5082 0 13.8105 0 11.2365C0 9.55347 0.296999 7.94473 0.890997 6.45973C1.485 4.94999 2.42549 3.56399 3.73724 2.32649C5.32124 0.767248 7.05373 0 8.88523 0C9.57822 0 10.2712 0.1485 10.89 0.445499C11.5335 0.742498 12.1027 1.188 12.5482 1.8315L18.2902 9.92472C18.7357 10.5435 19.0574 11.1127 19.2802 11.6572C19.5029 12.177 19.6267 12.6967 19.6267 13.167C19.6267 13.761 19.4534 14.355 19.1069 14.9242C18.7852 15.4935 18.3149 16.0875 17.721 16.6815L15.84 18.6367C15.5677 18.9089 15.444 19.2307 15.444 19.6267C15.444 19.8247 15.4687 19.9979 15.5182 20.1959C15.5925 20.3939 15.6667 20.5424 15.7162 20.6909C16.1617 21.5077 16.929 22.5719 18.018 23.8589C19.1317 25.1459 20.3197 26.4577 21.6067 27.7694C21.8542 28.0169 22.1264 28.2644 22.3739 28.5119C23.3639 29.4772 23.3887 31.0612 22.3987 32.0512Z"
-        fill="#6713DB"
-      />
-      <path
-        d="M49.4252 40.4165C49.4252 41.1095 49.3015 41.8273 49.054 42.5203C48.9797 42.7183 48.9055 42.9163 48.8065 43.1143C48.3857 44.0053 47.8412 44.8468 47.1235 45.6388C45.9107 46.9753 44.5742 47.9405 43.0645 48.5593C43.0398 48.5593 43.015 48.584 42.9903 48.584C41.53 49.178 39.946 49.4998 38.2383 49.4998C35.7138 49.4998 33.016 48.9058 30.1698 47.693C27.3235 46.4803 24.4773 44.8468 21.6558 42.7925C20.6906 42.0748 19.7253 41.357 18.8096 40.5898L26.9028 32.4966C27.5958 33.0163 28.2145 33.4123 28.7343 33.6846C28.858 33.7341 29.0065 33.8083 29.1798 33.8826C29.3778 33.9568 29.5758 33.9816 29.7985 33.9816C30.2193 33.9816 30.541 33.8331 30.8133 33.5608L32.6943 31.7046C33.313 31.0858 33.907 30.6156 34.4763 30.3186C35.0455 29.9721 35.6148 29.7988 36.2335 29.7988C36.7038 29.7988 37.1988 29.8978 37.7433 30.1206C38.2878 30.3433 38.857 30.6651 39.4758 31.0858L47.668 36.9021C48.3115 37.3476 48.757 37.8673 49.0292 38.4861C49.2767 39.1048 49.4252 39.7235 49.4252 40.4165Z"
-        fill="#6713DB"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
       />
     </svg>
   );
 }
 
-function PhoneButton() {
+function MessageIcon({ className }) {
   return (
-    <a
-      href={`tel:${SITE.phoneTel}`}
-      className="mt-5 inline-flex items-center justify-center gap-3 rounded-[6px] border-2 border-[#5A23B9] bg-white px-4 py-3 no-underline transition hover:brightness-95"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      aria-hidden="true"
+      className={className}
     >
-      <PhoneIcon />
-      <span
-        className="text-[16px] font-semibold text-[#5A23B9] sm:text-[22px]"
-        style={{ fontFamily: 'var(--font-support-montserrat), Montserrat, sans-serif' }}
-      >
-        {SITE.phoneDisplay}
-      </span>
-    </a>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+      />
+    </svg>
   );
 }
 
 export default function IndependentSupportHelp({ fullscreen = false }) {
   return (
-    <div className={`${poppins.variable} ${montserrat.variable}`}>
+    <div
+      className={`relative overflow-hidden bg-[var(--background)] text-[var(--foreground)] ${
+        fullscreen ? 'min-h-full' : 'min-h-screen'
+      }`}
+    >
+      <div className="absolute inset-0 soft-grid opacity-70" aria-hidden="true" />
       <div
-        className={`box-border w-full bg-[#f4f1fb] bg-cover bg-center bg-no-repeat px-3 py-8 sm:px-4 sm:py-10 ${
-          fullscreen ? 'min-h-full' : 'min-h-screen'
-        }`}
-        style={{
-          backgroundImage: "url('/images/support/bg-box.jpg')",
-          fontFamily: 'var(--font-support-poppins), Poppins, sans-serif',
-        }}
-      >
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center">
-          <h1 className="mb-2 max-w-4xl text-center text-[24px] font-bold capitalize leading-[29px] text-black md:text-[45px] md:leading-[54px]">
-            How would you like to connect for{' '}
-            <span className="text-[#5A23B9]">Internet Services and Assistance?</span>
-          </h1>
+        className="pointer-events-none absolute -right-20 top-10 h-72 w-72 rounded-full bg-mint/20 blur-3xl animate-drift"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute -left-16 bottom-16 h-64 w-64 rounded-full bg-teal/15 blur-3xl animate-drift"
+        aria-hidden="true"
+      />
 
+      <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <Link href="/" className="mb-8 inline-flex items-center justify-center animate-fade-up">
           <Image
-            src="/images/support/underline.png"
-            alt=""
-            width={113}
-            height={9}
-            className="mb-6 hidden w-[7%] max-w-[113px] md:mb-8 md:block"
+            src="/images/logo.png"
+            alt={`${SITE.brandFull} logo`}
+            width={180}
+            height={95}
+            className="h-12 w-auto sm:h-14"
+            priority
           />
+        </Link>
 
-          <div className="flex w-full flex-col items-stretch justify-center gap-4 md:flex-row md:gap-6 lg:gap-[22px]">
-            <div
-              className="flex min-h-[46vh] w-full flex-col items-center justify-center rounded-[14px] px-4 py-6 shadow-[0px_0px_10px_0px_rgba(0,0,0,0.28)] md:min-h-[60vh] md:w-[40%] md:px-5"
-              style={{
-                backgroundImage: "url('/images/support/card-box.png')",
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-              }}
+        <h1 className="mb-3 max-w-3xl text-center font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl md:text-5xl animate-fade-up-delay">
+          How Would You Like To Get Help Comparing Providers?
+        </h1>
+        <p className="mb-10 max-w-2xl text-center text-base text-muted leading-relaxed sm:text-lg animate-fade-up-delay">
+          Choose how you want to connect with {SITE.brandFull} — independent comparison help, not carrier account
+          support.
+        </p>
+
+        <div className="grid w-full gap-5 md:grid-cols-2 md:gap-6 animate-fade-up-delay-2">
+          <div className="flex flex-col border border-[var(--line)] bg-white p-7 sm:p-9">
+            <div className="mb-5 flex h-12 w-12 items-center justify-center bg-teal/10 text-teal">
+              <PhoneIcon className="h-6 w-6" />
+            </div>
+            <h2 className="font-display text-2xl font-bold text-ink sm:text-[28px]">Speak With A Live Agent</h2>
+            <p className="mt-3 flex-grow text-muted leading-relaxed">
+              Call now and we&apos;ll walk you through your options.
+            </p>
+            <a
+              href={`tel:${SITE.phoneTel}`}
+              className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3.5 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition"
             >
-              <Image
-                src="/images/support/human-agent-icon.png"
-                alt=""
-                width={218}
-                height={216}
-                className="mb-2 w-[35%] max-w-[120px] md:w-[45%]"
-              />
-              <h2 className="mb-2 max-w-[70%] text-center text-[24px] font-bold capitalize leading-[30px] text-white md:max-w-[61%] md:text-[34px] md:leading-[40px]">
-                Speak With A Human Agent
-              </h2>
-              <div className="mx-auto mb-1 h-[2.5px] w-[14%] bg-[#8C52F6]" />
-              <PhoneButton />
-            </div>
-
-            <div className="flex min-h-[46vh] w-full flex-col items-center justify-center rounded-[14px] border-2 border-[#5C11CF] bg-white px-4 py-6 md:min-h-[60vh] md:w-[40%] md:px-5">
-              <Image
-                src="/images/support/automated-icon.png"
-                alt=""
-                width={119}
-                height={119}
-                className="mb-2 w-[57%] max-w-[110px] md:w-[74%]"
-              />
-              <h2 className="mb-2 max-w-[60%] text-center text-[24px] font-bold capitalize leading-[30px] text-black md:max-w-[61%] md:text-[34px] md:leading-[40px]">
-                Automated Support Line
-              </h2>
-              <div className="mx-auto mb-1 h-[2.5px] w-[14%] bg-[#8C52F6]" />
-              <PhoneButton />
-            </div>
+              <PhoneIcon className="h-5 w-5" />
+              {SITE.phoneDisplay}
+            </a>
           </div>
 
-          <div className="mt-6 flex w-full flex-col items-center px-2 md:mt-8">
-            <Link href="/" className="inline-flex items-center justify-center rounded-full bg-[#0c1c24] px-4 py-2">
-              <Image
-                src="/images/logo.png"
-                alt={`${SITE.brandFull} logo`}
-                width={160}
-                height={84}
-                className="h-10 w-auto sm:h-12"
-              />
+          <div className="flex flex-col border border-[var(--line)] bg-white p-7 sm:p-9">
+            <div className="mb-5 flex h-12 w-12 items-center justify-center bg-teal/10 text-teal">
+              <MessageIcon className="h-6 w-6" />
+            </div>
+            <h2 className="font-display text-2xl font-bold text-ink sm:text-[28px]">Send Us a Message</h2>
+            <p className="mt-3 flex-grow text-muted leading-relaxed">
+              Prefer not to call? Fill out our contact form and we&apos;ll follow up.
+            </p>
+            <Link
+              href="/contact"
+              className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3.5 font-bold text-white bg-teal hover:bg-[var(--teal-deep)] transition"
+            >
+              Go to Contact Form
             </Link>
           </div>
         </div>
+
+        <p className="page-disclaimer mt-10 max-w-3xl text-center text-sm text-muted leading-relaxed">
+          {`${SITE.brandFull} is an independent comparison resource. We do not provide internet, TV, or phone services directly, and we are not affiliated with Spectrum, Xfinity, AT&T, Verizon, or any other carrier. For billing or existing account support, please contact your provider directly.`}
+        </p>
       </div>
     </div>
   );
