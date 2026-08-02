@@ -14,6 +14,34 @@ const SPECTRUM_TOPIC_TABS = [
   { label: 'Customer Service', hash: 'customer-service' },
 ];
 
+const SPECTRUM_SERVICES_GLANCE = {
+  title: 'Spectrum Services at a Glance',
+  intro:
+    'Spectrum offers a variety of services to meet everyday household needs. Here are four key areas we highlight.',
+  items: [
+    {
+      title: 'High-Speed Internet',
+      icon: 'internet',
+      body: 'Reliable internet with speeds starting around 100 Mbps, capable of supporting streaming, gaming, smart home devices, and remote work. Higher-speed tiers are available in select areas for households with heavy usage.',
+    },
+    {
+      title: 'Cable TV',
+      icon: 'tv',
+      body: 'A wide selection of channels, on-demand shows, and entertainment packages for every taste. Flexible bundles allow viewers to pick content that matches their lifestyle.',
+    },
+    {
+      title: 'Home Phone',
+      icon: 'phone',
+      body: 'Nationwide calling, voicemail, and dependable connections make Spectrum’s phone service a practical option for families and individuals who prefer a traditional home line.',
+    },
+    {
+      title: 'Mobile Services',
+      icon: 'mobile',
+      body: 'Spectrum Mobile leverages advanced wireless technology to provide fast and reliable 5G connectivity. Introductory promotions may offer added savings for new customers in select areas.',
+    },
+  ],
+};
+
 export default function SpectrumPage() {
   return (
     <ProviderPage
@@ -21,6 +49,7 @@ export default function SpectrumPage() {
       tagline="Widely available cable internet with flexible plan options for every household size."
       introTitle="Compare Spectrum internet packages — independent comparison"
       topicTabs={SPECTRUM_TOPIC_TABS}
+      servicesGlance={SPECTRUM_SERVICES_GLANCE}
       benefits={[
         'Wide availability across many markets',
         'No data caps on many plans',
