@@ -110,7 +110,7 @@ export default function ProviderPage({
                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
               />
             </svg>
-            Call to get assistance — {SITE.phoneDisplay}
+            Call to compare — {SITE.phoneDisplay}
           </a>
         </div>
       </section>
@@ -126,8 +126,8 @@ export default function ProviderPage({
           </h2>
           <p className="text-muted leading-relaxed">
             {SITE.brandFull} (operated by {SITE.legalName}) is an independent comparison and referral platform. Call to
-            get assistance to compare providers — we help you review {name} options alongside other providers so you can
-            choose what fits, then enroll directly with the provider.
+            compare providers — we help you review {name} options alongside other providers so you can choose what fits,
+            then enroll directly with the provider.
           </p>
         </div>
         <ul className="space-y-3">
@@ -234,13 +234,13 @@ export default function ProviderPage({
                 Why Choose <span className="text-teal">{SITE.brandFull}</span>?
               </h2>
               <p className="text-muted text-base md:text-lg leading-relaxed mb-8">
-                {`Getting ${displayName} Internet & Cable Services is easier with ${SITE.brandFull}. Call to get assistance to compare providers, understand features and pricing, and select the option that works best for your home or business. Our team guides you every step of the way — clear, reliable, and hassle-free.`}
+                {`Getting ${displayName} Internet & Cable Services is easier with ${SITE.brandFull}. Call to compare providers, understand features and pricing, and select the option that works best for your home or business. Our team guides you every step of the way — clear, reliable, and hassle-free.`}
               </p>
               <a
                 href={`tel:${SITE.phoneTel}`}
                 className="inline-flex items-center justify-center px-7 py-3.5 font-bold text-white bg-teal hover:bg-[var(--teal-deep)] transition"
               >
-                Call to get assistance to compare providers
+                Call to compare providers
               </a>
               <ul className="mt-8 space-y-4">
                 <li className="flex items-center gap-3 text-[#2a4550]">
