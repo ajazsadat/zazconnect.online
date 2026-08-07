@@ -73,7 +73,7 @@ export function xfinityFaqs() {
       a: 'Yes. Internet can often be combined with TV, phone, and/or mobile, which may simplify billing and unlock package pricing. Bundle mix depends on what’s offered at your address.',
     },
     {
-      q: `How does ${SITE.brandFull} assist with Xfinity?`,
+      q: `What does ${SITE.brandFull} do for Xfinity comparisons?`,
       a: `We help you compare plans, review features and typical pricing ranges, and check what may be available at your address. We’re an independent comparison and referral service — we don’t manage Xfinity accounts after activation.`,
     },
     {
