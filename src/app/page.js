@@ -39,7 +39,7 @@ export default function Home() {
   const pillars = [
     {
       title: 'Coast-to-coast comparison',
-      body: 'From metro hubs to suburban neighborhoods, we compare provider options nationwide while keeping support personal.',
+      body: 'From metro hubs to suburban neighborhoods, we compare provider options nationwide while keeping comparisons personal.',
     },
     {
       title: 'Up-to-date options',
