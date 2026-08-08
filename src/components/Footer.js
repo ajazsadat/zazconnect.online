@@ -90,14 +90,27 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10 px-4 sm:px-6 lg:px-8 py-8 space-y-3 text-xs leading-relaxed max-w-6xl mx-auto">
+      <div
+        id="disclaimer"
+        className="border-t border-white/10 px-4 sm:px-6 lg:px-8 py-8 space-y-3 text-xs leading-relaxed max-w-6xl mx-auto scroll-mt-28"
+      >
         {SITE.footerDisclaimer.map((line) => (
           <p key={line.slice(0, 40)}>{line}</p>
         ))}
-        <p className="pt-2 text-[#6f8a92]">
-          © {new Date().getFullYear()} {SITE.legalName}. All rights reserved. Provider names and trademarks belong to
-          their respective owners and are used for identification and comparison only.
-        </p>
+      </div>
+      <div className="border-t border-white/10 bg-[#071418]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs">
+          <Link
+            href="/#disclaimer"
+            className="inline-flex w-fit font-semibold text-white hover:text-mint transition"
+          >
+            Disclaimer
+          </Link>
+          <p className="text-[#6f8a92]">
+            © {new Date().getFullYear()} {SITE.legalName}. All rights reserved. Provider names and trademarks belong to
+            their respective owners and are used for identification and comparison only.
+          </p>
+        </div>
       </div>
     </footer>
   );
