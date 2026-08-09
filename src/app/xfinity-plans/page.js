@@ -13,7 +13,7 @@ export default function XfinityPage() {
       name="Xfinity"
       brandMark="Xfinity"
       tagline="Independent comparison of Xfinity internet packages for streaming, work, and gaming."
-      introTitle="Compare Xfinity internet packages — independent comparison"
+      introTitle="Compare Xfinity internet and cable services With JKcompareinternet"
       benefits={[
         'Speed tiers for streaming, gaming & work',
         'Wide availability in many markets',
