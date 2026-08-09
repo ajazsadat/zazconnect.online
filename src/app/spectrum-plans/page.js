@@ -2,9 +2,9 @@ import ProviderPage from '@/components/ProviderPage';
 import { providerFaqs, providerContentSections } from '@/lib/providerContent';
 
 export const metadata = {
-  title: 'Spectrum Internet & Cable Services | ZazConnect',
+  title: 'Compare Spectrum Internet & Cable Services | ZazConnect',
   description:
-    'Spectrum Internet & Cable Services — call to compare providers. Independent comparison with ZazConnect / Maverick Wells Inc.',
+    'Compare Spectrum Internet & Cable Services — call to compare providers. Independent comparison with ZazConnect / Maverick Wells Inc.',
 };
 
 const SPECTRUM_TOPIC_TABS = [
