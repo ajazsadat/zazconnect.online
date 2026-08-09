@@ -47,7 +47,8 @@ export default function SpectrumPage() {
     <ProviderPage
       name="Spectrum"
       tagline="Widely available cable internet with flexible plan options for every household size."
-      introTitle="Compare Spectrum internet and cable services With JKcompareinternet"
+      heroTitle="Compare Spectrum internet and cable services With JKcompareinternet"
+      introTitle="Compare Spectrum internet packages — independent comparison"
       topicTabs={SPECTRUM_TOPIC_TABS}
       servicesGlance={SPECTRUM_SERVICES_GLANCE}
       benefits={[
