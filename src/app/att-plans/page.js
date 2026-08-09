@@ -22,7 +22,6 @@ export default function AttPage() {
       name="AT&T"
       brandMark="AT&T Fiber"
       tagline="Compare AT&T fiber and wireless home internet options available in your area."
-      heroTitle="Compare AT&T internet and cable services With JKcompareinternet"
       introTitle="Compare AT&T Fiber internet packages — independent comparison"
       benefits={[
         'Strong fiber network where available',
