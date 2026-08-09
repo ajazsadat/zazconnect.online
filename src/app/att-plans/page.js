@@ -22,7 +22,7 @@ export default function AttPage() {
       name="AT&T"
       brandMark="AT&T Fiber"
       tagline="Compare AT&T fiber and wireless home internet options available in your area."
-      introTitle="Compare AT&T Fiber internet packages — independent comparison"
+      introTitle="Compare AT&T internet and cable services With JKcompareinternet"
       benefits={[
         'Strong fiber network where available',
         'No data caps on many fiber plans',
