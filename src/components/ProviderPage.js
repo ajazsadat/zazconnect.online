@@ -88,7 +88,7 @@ export default function ProviderPage({
       <section className="border-b border-[var(--line)] bg-[#0c1c24]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-center">
           <Link
-            href="/independent-support-help"
+            href="/compare-internet-options"
             className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 font-semibold text-[#0c1c24] bg-mint hover:brightness-110 transition"
           >
             <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
