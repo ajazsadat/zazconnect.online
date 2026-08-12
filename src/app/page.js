@@ -11,16 +11,16 @@ export default function Home() {
 
   const faqs = [
     {
-      q: 'Are you an internet, TV, or security provider yourself?',
-      a: `No. We’re an independent comparison and referral platform operated by ${SITE.legalName}. We don’t own or operate network infrastructure, and we’re not affiliated with any single carrier. When you call or chat, we help match you with a licensed provider who fulfills, installs, and bills for the service directly.`,
+      q: 'Which internet providers can I find through your platform?',
+      a: `${SITE.operatedByLabel} works with a network of licensed providers, authorized retailers, and partner distributors representing leading U.S. telecom and internet service brands. Availability and offers vary by ZIP code — call us at ${SITE.phoneDisplay} to view current plan options in your area.`,
     },
     {
       q: 'How do I compare internet providers in my area?',
       a: 'We compare speed, reliability, and pricing across multiple licensed providers so you can pick the plan that fits how you use the internet — streaming, remote work, or gaming.',
     },
     {
-      q: 'How do I compare TV & streaming packages?',
-      a: 'We compare channel lineups, on-demand libraries, and DVR features across providers so you can see options side-by-side before choosing.',
+      q: 'What does it mean that you are an independent comparison platform?',
+      a: `We are not the direct provider of internet, wireless, or cable services. ${SITE.operatedByLabel} helps you market-compare and facilitate connections through licensed carriers and partner programs — giving you access to more plan options in one place. Services are fulfilled, installed, and billed by the provider you choose.`,
     },
     {
       q: 'Are there any installation or equipment fees?',
@@ -136,11 +136,18 @@ export default function Home() {
       <section className="relative soft-grid border-b border-[var(--line)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mb-4">Independent plan comparison</h2>
+            <p className="text-teal text-sm font-semibold uppercase tracking-wider mb-3">Who We Are</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mb-4">
+              Independent plan comparison
+            </h2>
             <p className="text-muted text-lg leading-relaxed">
-              Operated by {SITE.legalName}, we help you compare and connect with internet, TV, and home security
-              providers across the United States. We are not a service provider ourselves — we don’t own or operate
-              network infrastructure. Services are fulfilled, installed, and billed by the licensed provider you choose.
+              {SITE.operatedByLabel} is an independent comparison and referral platform that works with multiple leading
+              broadband, cable, and wireless providers. We don’t favor any carrier — our recommendations are based on
+              your location, your needs, and your budget.
+            </p>
+            <p className="text-muted text-lg leading-relaxed mt-4">
+              We are not an internet service provider and do not own or operate network infrastructure. All services are
+              fulfilled and billed directly by licensed carriers.
             </p>
           </div>
           <div className="mt-12 grid md:grid-cols-3 gap-8">
@@ -155,6 +162,19 @@ export default function Home() {
       </section>
 
       <section className="bg-white border-b border-[var(--line)] py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mb-4">
+            {SITE.operatedByLabel} offers
+          </h2>
+          <p className="text-muted text-lg leading-relaxed max-w-3xl">
+            A single, convenient platform to explore high-speed Internet, Cable TV, Home Phone, Wireless, and Home
+            Security options—featuring availability checks, upfront pricing guidance, and easy installation coordination
+            as an independent comparison and referral resource for leading U.S. telecom and home service providers.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-20 soft-grid border-b border-[var(--line)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl font-bold text-ink mb-3">What you can compare</h2>
           <p className="text-muted mb-10 max-w-2xl">
@@ -184,7 +204,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 soft-grid">
+      <section className="bg-white border-y border-[var(--line)] py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl font-bold text-ink mb-3">Bundle & save: internet + TV</h2>
           <p className="text-muted mb-10 max-w-2xl">

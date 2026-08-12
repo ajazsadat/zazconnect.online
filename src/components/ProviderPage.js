@@ -116,6 +116,18 @@ export default function ProviderPage({
         </div>
       </section>
 
+      <section className="border-b border-[var(--line)] bg-teal text-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-5">
+          <p className="font-display text-lg md:text-xl font-bold mb-1">Why Choose {SITE.brandFull}?</p>
+          <p className="text-sm md:text-[15px] text-white/90 leading-relaxed">
+            We help you compare top internet and TV plans from leading and trusted providers available in your area.
+          </p>
+          <p className="mt-2 text-sm md:text-[15px] font-semibold leading-relaxed">
+            {SITE.providerIndependentDisclaimer(displayName)}
+          </p>
+        </div>
+      </section>
+
       {topicTabs.length > 0 && (
         <ProviderTopicTabs ariaLabel={`${name} topics`} tabs={topicTabs} />
       )}
@@ -283,6 +295,9 @@ export default function ProviderPage({
                 </li>
               </ul>
               <p className="mt-8 text-xs text-muted leading-relaxed max-w-xl">
+                *{SITE.providerIndependentDisclaimer(displayName)}
+              </p>
+              <p className="mt-3 text-xs text-muted leading-relaxed max-w-xl">
                 Pricing, availability, and included services vary by location and plan. Promotions may require AutoPay.
                 Equipment and streaming services subject to terms and change.
               </p>

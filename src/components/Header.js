@@ -16,6 +16,7 @@ const nav = [
 function headerDisclaimerForPath(pathname) {
   if (pathname === '/spectrum-plans') return SITE.spectrumHeaderDisclaimer;
   if (pathname === '/xfinity-plans') return SITE.xfinityHeaderDisclaimer;
+  if (pathname === '/att-plans') return SITE.attHeaderDisclaimer;
   return SITE.topDisclaimer;
 }
 

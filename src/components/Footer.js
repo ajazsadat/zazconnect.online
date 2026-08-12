@@ -57,16 +57,16 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link href="/privacy-policy" className="hover:text-mint">
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link href="/terms-conditions" className="hover:text-mint">
-                Terms & Conditions
-              </Link>
-            </li>
+          </ul>
+          <p className="text-white font-semibold mb-3 mt-8">Legal</p>
+          <ul className="space-y-2 text-sm">
+            {SITE.legalLinks.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="hover:text-mint">
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
