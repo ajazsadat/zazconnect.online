@@ -15,8 +15,15 @@ export default function ResellerDisclosurePage() {
         select, and activate broadband, wireless, and digital services across the United States.
       </p>
       <p>
-        We are not owned, operated, or controlled by any internet service provider (ISP) or carrier. All broadband and
-        wireless services are delivered, billed, and supported directly by the respective licensed providers.
+        We are not owned, operated, or controlled by any internet service provider (ISP) or carrier. {SITE.legalName}{' '}
+        does not own, operate, install, or directly provide telecommunications, internet, cable TV, or wireless
+        services. All broadband and wireless services featured on this website are delivered, installed, billed, and
+        supported directly by the respective licensed providers.
+      </p>
+      <p>
+        Our role is limited to providing informational resources and connecting interested consumers with available
+        service providers. Decisions regarding service availability, pricing, installation, billing, technical support,
+        and account management are made solely by the applicable telecommunications provider.
       </p>
       <p>
         {SITE.legalName} may receive a commission or referral incentive from these providers when a customer activates

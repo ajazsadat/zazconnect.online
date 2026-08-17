@@ -90,12 +90,7 @@ export default function Footer() {
         className="border-t border-white/10 px-4 sm:px-6 lg:px-8 py-8 max-w-6xl mx-auto scroll-mt-28"
       >
         <h2 className="font-display text-lg md:text-xl font-bold text-white mb-3">Disclaimer:</h2>
-        <p className="text-[13px] leading-relaxed text-[#b7cbcf] mb-5">{SITE.beforeFooterDisclaimer}</p>
-        <div className="space-y-3 text-xs leading-relaxed">
-          {SITE.footerDisclaimer.map((line) => (
-            <p key={line.slice(0, 40)}>{line}</p>
-          ))}
-        </div>
+        <p className="text-[13px] leading-relaxed text-[#b7cbcf]">{SITE.beforeFooterDisclaimer}</p>
       </div>
       <div className="border-t border-white/10 bg-[#071418]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs">
@@ -109,6 +104,19 @@ export default function Footer() {
             © {new Date().getFullYear()} {SITE.legalName}. All rights reserved. Provider names and trademarks belong to
             their respective owners and are used for identification and comparison only.
           </p>
+        </div>
+      </div>
+      <div className="border-t border-white/10 bg-[#071418]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <p className="text-[11px] leading-relaxed text-[#6f8a92] italic mb-6">{SITE.footerOfferNote}</p>
+          <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+            {SITE.footerOfferDisclosures.map((item) => (
+              <div key={item.title}>
+                <h3 className="text-[12px] font-semibold text-white mb-1">{item.title}</h3>
+                <p className="text-[11px] leading-relaxed text-[#6f8a92]">{item.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
