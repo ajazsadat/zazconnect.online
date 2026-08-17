@@ -38,10 +38,33 @@ export const SITE = {
   },
   beforeFooterDisclaimer:
     "Maverick Wells Inc operates as an independent comparison platform that helps users explore and evaluate Internet and TV plans from multiple trusted providers. We do not directly sell, install, or manage any Internet or TV services.",
-  footerDisclaimer: [
-    "zazconnect.online is operated by Maverick Wells Inc, an independent authorized sales partner and reseller that helps consumers discover, compare, and activate internet, TV, phone, and wireless service options available in the United States.",
-    "Maverick Wells Inc does not own, operate, install, or directly provide telecommunications, internet, cable TV, or wireless services. All services featured on this website are offered, installed, billed, and supported exclusively by their respective third-party service providers. We are not owned, operated, or controlled by any internet service provider (ISP) or carrier.",
-    "Our role is limited to providing informational resources and connecting interested consumers with available service providers. Decisions regarding service availability, pricing, installation, billing, technical support, and account management are made solely by the applicable telecommunications provider.",
+  footerOfferNote:
+    "Plan details, pricing, and features are based on each provider's official offerings and are subject to change. Provider names and related marks are trademarks of their respective owners.",
+  footerOfferDisclosures: [
+    {
+      title: "Offer & Pricing Details",
+      body: "Promotional pricing may apply for a limited time and is subject to change. After the promotional period, standard rates may apply. Discounts may begin within the first few billing cycles.",
+    },
+    {
+      title: "Eligibility",
+      body: "Offers may be available to new residential customers only and may not be available in all areas. Certain multi-dwelling units may not qualify.",
+    },
+    {
+      title: "AutoPay & Paperless Billing",
+      body: "Monthly discounts may apply when enrolled in AutoPay and paperless billing. Discount amounts may vary depending on payment method.",
+    },
+    {
+      title: "Fees & Taxes",
+      body: "Installation fees, equipment charges, and applicable taxes may apply. Pricing excludes taxes and surcharges unless otherwise stated.",
+    },
+    {
+      title: "Speeds & Performance",
+      body: "Internet speeds are based on wired connections. Actual speeds may vary depending on network conditions, equipment, and other factors.",
+    },
+    {
+      title: "General Terms",
+      body: "Offers are subject to change or discontinuation without notice. Additional terms and conditions may apply.",
+    },
   ],
   legalLinks: [
     { name: "Terms & Conditions", href: "/terms-conditions" },
