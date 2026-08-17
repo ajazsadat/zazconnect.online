@@ -16,7 +16,7 @@ export default function PrivacyPage() {
             {`${SITE.brandFull} ("we," "us," "our"), operated by ${SITE.legalName}, manages this website and associated promotional brands. This Privacy Policy describes how we collect, use, and share information when you visit our website or contact us.`}
           </p>
           <p>
-            {`${SITE.brandFull} is an independent comparison resource. We do not provide internet, TV, or phone services directly, and we are not affiliated with Spectrum, Xfinity, AT&T, Verizon, Frontier, Windstream, Brightspeed, or any other carrier.`}
+            {`${SITE.brandFull} is an independent, authorized reseller. We do not provide internet, TV, or phone services directly, and we are not owned, operated, or controlled by any internet service provider (ISP) or carrier.`}
           </p>
           <h2 className="font-display text-xl font-bold text-ink pt-4">Information we collect</h2>
           <p>

@@ -2,7 +2,7 @@ import { SITE } from '@/lib/site';
 
 export const metadata = {
   title: `About Us | ${SITE.brandFull}`,
-  description: `Learn how ${SITE.legalName} operates ${SITE.brandFull} as an independent comparison and referral platform.`,
+  description: `Learn how ${SITE.legalName} operates ${SITE.brandFull} as an independent, authorized reseller.`,
 };
 
 export default function AboutPage() {
@@ -32,7 +32,7 @@ export default function AboutPage() {
           <p className="text-teal text-sm font-semibold uppercase tracking-wider mb-3">Who we are</p>
           <h2 className="font-display text-3xl font-bold text-ink mb-4">Independent by design</h2>
           <p className="text-muted leading-relaxed">
-            {SITE.operatedByLabel} is an independent comparison and referral service. Our role is limited to
+            {SITE.operatedByLabel} is an independent, authorized reseller. Our role is limited to
             informational support, helping customers compare available internet and bundled options, and assisting with
             enrollment by connecting you with the provider you choose.
           </p>

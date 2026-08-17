@@ -74,7 +74,7 @@ export function xfinityFaqs() {
     },
     {
       q: `What does ${SITE.brandFull} do for Xfinity comparisons?`,
-      a: `We help you compare plans, review features and typical pricing ranges, and check what may be available at your address. We’re an independent comparison and referral service — we don’t manage Xfinity accounts after activation.`,
+      a: `We help you compare plans, review features and typical pricing ranges, and check what may be available at your address. ${SITE.brandFull} is an authorized Xfinity dealer, but we don’t provide Xfinity customer service or manage Xfinity accounts after activation — that’s handled directly by Xfinity.`,
     },
     {
       q: 'Do Xfinity plans include equipment and apps?',

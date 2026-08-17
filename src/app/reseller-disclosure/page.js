@@ -11,8 +11,8 @@ export default function ResellerDisclosurePage() {
   return (
     <LegalArticle title="Reseller Disclosure">
       <p>
-        {SITE.operatedByLabel} is an independent comparison and referral platform that helps customers compare,
-        select, and connect with broadband, wireless, and digital service options across the United States.
+        {SITE.operatedByLabel} is an independent authorized sales partner and reseller that helps customers compare,
+        select, and activate broadband, wireless, and digital services across the United States.
       </p>
       <p>
         We are not owned, operated, or controlled by any internet service provider (ISP) or carrier. All broadband and

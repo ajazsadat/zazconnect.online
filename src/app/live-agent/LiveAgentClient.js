@@ -105,7 +105,7 @@ export default function LiveAgentClient() {
         </div>
 
         <p className="mt-6 max-w-3xl text-center text-xs text-muted leading-relaxed sm:text-sm">
-          {`${SITE.legalName} is an independent comparison and referral service. We do not own or operate any internet network and do not provide carrier account support. For billing, outages, or technical issues with an existing service, contact your provider through their official channels.`}
+          {`${SITE.legalName} is an independent, authorized reseller. We do not own or operate any internet network and do not provide carrier account support. For billing, outages, or technical issues with an existing service, contact your provider through their official channels.`}
         </p>
       </div>
     </div>
