@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { SITE } from '@/lib/site';
 
 export const metadata = {
@@ -42,6 +43,33 @@ export default function TermsPage() {
           <p>
             We do not guarantee that any plan will be available at your address or that promotional pricing will apply.
             Final eligibility is determined by the provider.
+          </p>
+
+          <h2 className="font-display text-xl font-bold text-ink pt-4">Payments & Commissions</h2>
+          <p>
+            We do not charge you for consultation or comparison assistance. We may earn a commission or referral fee
+            from a provider when you activate service through us. This does not change the price you pay or influence
+            which options we show you. Full detail is set out in our{' '}
+            <Link href="/reseller-disclosure" className="text-teal hover:underline">
+              Reseller Disclosure
+            </Link>{' '}
+            and{' '}
+            <Link href="/fees-disclosures" className="text-teal hover:underline">
+              Fees &amp; Disclosures
+            </Link>
+            .
+          </p>
+
+          <h2 className="font-display text-xl font-bold text-ink pt-4">Privacy & Data Use</h2>
+          <p>
+            We collect only the information needed to respond to your request and connect you with a provider, and we
+            do not sell your personal information. Details you submit may be shared with the provider you select in
+            order to check availability and complete enrollment. How we collect, use, share, and retain that
+            information is described in our{' '}
+            <Link href="/privacy-policy" className="text-teal hover:underline">
+              Privacy Policy
+            </Link>
+            .
           </p>
 
           <h2 className="font-display text-xl font-bold text-ink pt-4">Intellectual Property</h2>
