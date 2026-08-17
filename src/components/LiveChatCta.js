@@ -1,10 +1,11 @@
 'use client';
 
-import { SITE, openLiveChat } from '@/lib/site';
+import Link from 'next/link';
+import { SITE } from '@/lib/site';
 
 export default function LiveChatCta({
-  title = 'Talk with a live agent',
-  description = 'Compare options for your address — independent guidance, not a carrier. Chat live or call our team.',
+  title = 'Compare Your Options',
+  description = 'Compare options for your address — independent guidance, not a carrier. Contact us or call our team.',
 }) {
   return (
     <section className="border-y border-[var(--line)] bg-white">
@@ -14,20 +15,19 @@ export default function LiveChatCta({
           <p className="text-muted text-sm leading-relaxed max-w-xl">{description}</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-          <button
-            type="button"
-            onClick={openLiveChat}
+          <Link
+            href="/contact"
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 font-semibold text-[#0c1c24] bg-mint hover:brightness-110 transition"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
               />
             </svg>
-            Live Chat
-          </button>
+            Contact Us
+          </Link>
           <a
             href={`tel:${SITE.phoneTel}`}
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 font-semibold text-white bg-teal hover:bg-[var(--teal-deep)] transition"

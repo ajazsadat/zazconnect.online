@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { SITE, openLiveChat } from '@/lib/site';
+import { SITE } from '@/lib/site';
 import LiveChatCta from '@/components/LiveChatCta';
 
 export default function Home() {
@@ -30,8 +30,8 @@ export default function Home() {
       a: 'Promotional pricing periods vary by provider and offer. We’ll confirm the length of any promo period and what the standard rate becomes afterward.',
     },
     {
-      q: 'Who do I contact for support after I’m connected?',
-      a: `After activation, technical support, billing, and account management are handled by your selected provider. You can reach us at ${SITE.phoneDisplay} for general questions, plan guidance, or help finding the right contact at your provider.`,
+      q: 'Who handles my service after I’m connected?',
+      a: 'Once you’ve signed up, all billing, installation, and technical support are handled directly by your selected provider — not by ZazConnect.',
     },
   ];
 
@@ -106,18 +106,17 @@ export default function Home() {
             find the option that actually fits your home and budget.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fade-up-delay-2">
-            <button
-              type="button"
-              onClick={openLiveChat}
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition"
             >
-              Live Chat
-            </button>
+              Contact Us
+            </Link>
             <a
               href={`tel:${SITE.phoneTel}`}
               className="inline-flex items-center justify-center px-8 py-4 font-bold text-white border border-white/30 hover:bg-white/10 transition"
             >
-              Call & compare now
+              {SITE.phoneDisplay}
             </a>
           </div>
         </div>
@@ -183,16 +182,18 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <button
-              type="button"
-              onClick={openLiveChat}
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center px-6 py-3 font-semibold text-[#0c1c24] bg-mint hover:brightness-110 transition"
             >
-              Live Chat to compare
-            </button>
-            <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 font-semibold text-teal border border-teal/40 hover:bg-teal/5 transition">
-              Contact us
+              Contact Us to Compare
             </Link>
+            <a
+              href={`tel:${SITE.phoneTel}`}
+              className="inline-flex items-center justify-center px-6 py-3 font-semibold text-teal border border-teal/40 hover:bg-teal/5 transition"
+            >
+              {SITE.phoneDisplay}
+            </a>
           </div>
         </div>
       </section>
@@ -202,7 +203,7 @@ export default function Home() {
           <h2 className="font-display text-3xl font-bold text-ink mb-3">Bundle & save: internet + TV</h2>
           <p className="text-muted mb-10 max-w-2xl">
             Combining internet and TV through one provider can mean simpler billing and better value. Compare bundle
-            styles below, then call or chat to see exact pricing for your address.
+            styles below, then call or contact us to see exact pricing for your address.
           </p>
           <div className="grid md:grid-cols-3 gap-0 border border-[var(--line)] bg-white">
             {bundles.map((b) => (
@@ -223,15 +224,14 @@ export default function Home() {
                     <li key={pt}>• {pt}</li>
                   ))}
                 </ul>
-                <button
-                  type="button"
-                  onClick={openLiveChat}
+                <Link
+                  href="/contact"
                   className={`inline-flex text-sm font-semibold ${
                     b.featured ? 'text-mint hover:underline' : 'text-teal hover:underline'
                   }`}
                 >
-                  Live Chat to compare
-                </button>
+                  Contact Us to Compare
+                </Link>
               </div>
             ))}
           </div>
@@ -260,13 +260,12 @@ export default function Home() {
             })}
           </div>
           <div className="mt-10 text-center flex flex-col sm:flex-row gap-3 justify-center">
-            <button
-              type="button"
-              onClick={openLiveChat}
+            <Link
+              href="/contact"
               className="inline-flex px-7 py-3.5 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition"
             >
-              Live Chat
-            </button>
+              Contact Us
+            </Link>
             <a
               href={`tel:${SITE.phoneTel}`}
               className="inline-flex px-7 py-3.5 font-bold text-white bg-teal hover:bg-[var(--teal-deep)] transition"
