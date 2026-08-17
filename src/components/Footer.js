@@ -108,7 +108,6 @@ export default function Footer() {
       </div>
       <div className="border-t border-white/10 bg-[#071418]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <p className="text-[11px] leading-relaxed text-[#6f8a92] italic mb-6">{SITE.footerOfferNote}</p>
           <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
             {SITE.footerOfferDisclosures.map((item) => (
               <div key={item.title}>

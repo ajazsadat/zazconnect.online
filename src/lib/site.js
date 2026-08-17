@@ -38,8 +38,6 @@ export const SITE = {
   },
   beforeFooterDisclaimer:
     "Maverick Wells Inc operates as an independent comparison platform that helps users explore and evaluate Internet and TV plans from multiple trusted providers. We do not directly sell, install, or manage any Internet or TV services.",
-  footerOfferNote:
-    "Plan details, pricing, and features are based on each provider's official offerings and are subject to change. Provider names and related marks are trademarks of their respective owners.",
   footerOfferDisclosures: [
     {
       title: "Offer & Pricing Details",
