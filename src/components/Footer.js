@@ -41,11 +41,6 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/live-agent" className="hover:text-mint">
-                Live Agent
-              </Link>
-            </li>
-            <li>
               <Link href="/contact" className="hover:text-mint">
                 Contact Us
               </Link>
