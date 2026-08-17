@@ -15,7 +15,7 @@ export default function TermsPage() {
             {`Welcome to ${SITE.domain}, operated by ${SITE.legalName}. By accessing or using our website and services, you agree to these Terms of Service.`}
           </p>
           <p>
-            {`${SITE.brandFull} ("we," "us," "our") is an independent comparison and referral platform. We are not an internet, cable, wireless, or home security service provider, and we are not affiliated with Spectrum, Xfinity, AT&T, Verizon, Frontier, Windstream, Brightspeed, or any other carrier.`}
+            {`${SITE.operatedByLabel} ("we," "us," "our") is a certified third-party reseller connecting customers with licensed telecommunications and technology service providers across the United States. We do not own or operate any internet, cable, wireless, or communication networks, and we are not owned, operated, or controlled by any internet service provider (ISP) or carrier.`}
           </p>
 
           <h2 className="font-display text-xl font-bold text-ink pt-4">Acceptance of Terms</h2>

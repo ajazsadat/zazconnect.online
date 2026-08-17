@@ -19,7 +19,7 @@ const body = Source_Sans_3({
 export const metadata = {
   title: 'ZazConnect | Compare Ultra-Fast Internet & Premium TV Plans',
   description:
-    'ZazConnect (operated by Maverick Wells Inc) helps you compare internet, TV, and home security plans from licensed providers — independent comparison and referral.',
+    'ZazConnect (operated by Maverick Wells Inc) helps you compare internet, TV, and home security plans from licensed providers — an independent, authorized reseller.',
   keywords: 'ZazConnect, compare internet plans, fiber internet, cable TV, Houston',
 };
 
@@ -28,7 +28,11 @@ const GTM_ID = 'GTM-PH8WX2Q2';
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} h-full antialiased`} suppressHydrationWarning>
-      <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
+      {/* Extensions like Grammarly inject attributes into body before hydration */}
+      <body
+        className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]"
+        suppressHydrationWarning
+      >
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

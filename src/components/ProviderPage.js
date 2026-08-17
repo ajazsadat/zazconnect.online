@@ -98,7 +98,7 @@ export default function ProviderPage({
                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
               />
             </svg>
-            Speak With A Live Agent
+            Contact our live representative
           </Link>
           <a
             href={`tel:${SITE.phoneTel}`}
@@ -123,7 +123,7 @@ export default function ProviderPage({
             We help you compare top internet and TV plans from leading and trusted providers available in your area.
           </p>
           <p className="mt-2 text-sm md:text-[15px] font-semibold leading-relaxed">
-            {SITE.providerIndependentDisclaimer(displayName)}
+            {SITE.providerStatusDisclaimer(name)}
           </p>
         </div>
       </section>
@@ -138,7 +138,7 @@ export default function ProviderPage({
             {introTitle || `Compare ${displayName} with ${SITE.brandFull}`}
           </h2>
           <p className="text-muted leading-relaxed">
-            {SITE.brandFull} (operated by {SITE.legalName}) is an independent comparison and referral platform. Call to
+            {SITE.brandFull} (operated by {SITE.legalName}) is an independent, authorized reseller. Call to
             compare providers — we help you review {name} options alongside other providers so you can choose what fits,
             then enroll directly with the provider.
           </p>
@@ -295,7 +295,7 @@ export default function ProviderPage({
                 </li>
               </ul>
               <p className="mt-8 text-xs text-muted leading-relaxed max-w-xl">
-                *{SITE.providerIndependentDisclaimer(displayName)}
+                *{SITE.providerStatusDisclaimer(name)}
               </p>
               <p className="mt-3 text-xs text-muted leading-relaxed max-w-xl">
                 Pricing, availability, and included services vary by location and plan. Promotions may require AutoPay.

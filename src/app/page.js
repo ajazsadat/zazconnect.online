@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { SITE, openLiveChat } from '@/lib/site';
@@ -12,15 +11,15 @@ export default function Home() {
   const faqs = [
     {
       q: 'Which internet providers can I find through your platform?',
-      a: `${SITE.operatedByLabel} works with a network of licensed providers, authorized retailers, and partner distributors representing leading U.S. telecom and internet service brands. Availability and offers vary by ZIP code — call us at ${SITE.phoneDisplay} to view current plan options in your area.`,
+      a: `${SITE.operatedByLabel} partners with a network of licensed resellers, authorized retailers, and master-dealer distributors representing leading U.S. telecom and internet service brands. Availability and offers vary by ZIP code — call us at ${SITE.phoneDisplay} to view current plan options in your area.`,
     },
     {
       q: 'How do I compare internet providers in my area?',
       a: 'We compare speed, reliability, and pricing across multiple licensed providers so you can pick the plan that fits how you use the internet — streaming, remote work, or gaming.',
     },
     {
-      q: 'What does it mean that you are an independent comparison platform?',
-      a: `We are not the direct provider of internet, wireless, or cable services. ${SITE.operatedByLabel} helps you market-compare and facilitate connections through licensed carriers and partner programs — giving you access to more plan options in one place. Services are fulfilled, installed, and billed by the provider you choose.`,
+      q: 'What does it mean to be an “authorized reseller” or “partner network”?',
+      a: `We are not the direct provider of internet, wireless, or cable services. Instead, ${SITE.operatedByLabel} operates as an authorized reseller and licensed retailer for multiple carrier and service networks across the U.S. This means we’re approved to market, compare, and facilitate service orders through official partner and master-dealer programs — giving customers access to more plan options in one place. Services are fulfilled, installed, and billed by the provider you choose.`,
     },
     {
       q: 'Are there any installation or equipment fees?',
@@ -96,18 +95,11 @@ export default function Home() {
         <div className="absolute -right-16 top-24 w-80 h-80 rounded-full bg-mint/20 blur-3xl animate-drift" />
         <div className="absolute left-10 bottom-20 w-64 h-64 rounded-full bg-teal/30 blur-3xl animate-drift" />
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="animate-fade-up mb-8">
-            <Image
-              src="/images/logo.png"
-              alt={`${SITE.brandFull} logo`}
-              width={320}
-              height={169}
-              className="h-16 sm:h-20 md:h-24 w-auto"
-              priority
-            />
-          </div>
+          <p className="animate-fade-up mb-6 font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-mint">
+            {SITE.brandFull}
+          </p>
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white max-w-3xl leading-tight animate-fade-up-delay">
-            Compare ultra-fast internet & premium TV plans near you
+            Find Reliable Internet, TV &amp; Wireless Plans Near You
           </h1>
           <p className="mt-5 text-lg text-[#c5dde0] max-w-2xl leading-relaxed animate-fade-up-delay-2">
             We help you compare internet, TV, and home security plans from licensed providers in your area — so you can
@@ -141,7 +133,7 @@ export default function Home() {
               Independent plan comparison
             </h2>
             <p className="text-muted text-lg leading-relaxed">
-              {SITE.operatedByLabel} is an independent comparison and referral platform that works with multiple leading
+              {SITE.operatedByLabel} is an independent, authorized reseller that works with multiple leading
               broadband, cable, and wireless providers. We don’t favor any carrier — our recommendations are based on
               your location, your needs, and your budget.
             </p>
@@ -169,7 +161,8 @@ export default function Home() {
           <p className="text-muted text-lg leading-relaxed max-w-3xl">
             A single, convenient platform to explore high-speed Internet, Cable TV, Home Phone, Wireless, and Home
             Security options—featuring availability checks, upfront pricing guidance, and easy installation coordination
-            as an independent comparison and referral resource for leading U.S. telecom and home service providers.
+            as an independent, authorized retailer and licensed reseller for several leading U.S. telecom and home
+            service providers.
           </p>
         </div>
       </section>
