@@ -9,7 +9,7 @@ import { PROVIDERS, SITE } from '@/lib/site';
 const nav = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },
-  { name: 'Contact Us to Compare', href: '/live-agent' },
+  { name: 'Contact Us to Compare', href: '/contact-us-to-compare' },
   { name: 'Contact Us', href: '/contact' },
 ];
 
@@ -26,7 +26,7 @@ export default function Header() {
   const [providersOpen, setProvidersOpen] = useState(false);
   const headerDisclaimer = headerDisclaimerForPath(pathname);
 
-  if (pathname === '/compare-internet-options' || pathname === '/live-agent') {
+  if (pathname === '/compare-internet-options' || pathname === '/contact-us-to-compare') {
     return null;
   }
 

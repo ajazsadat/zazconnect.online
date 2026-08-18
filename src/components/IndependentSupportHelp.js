@@ -78,10 +78,9 @@ export default function IndependentSupportHelp({ fullscreen = false }) {
               height={216}
               className="mb-4 h-auto w-[28%] max-w-[88px]"
             />
-            <h2 className="font-display text-xl font-bold text-ink sm:text-2xl">Phone Call</h2>
-            <p className="mt-2 mb-5 flex-grow text-sm text-muted leading-relaxed sm:text-base">
-              to speak with a live agent
-            </p>
+            <h2 className="mb-5 flex-grow font-display text-xl font-bold text-ink sm:text-2xl">
+              Call to Compare Now
+            </h2>
             <a
               href={`tel:${SITE.phoneTel}`}
               className="mt-auto inline-flex w-full items-center justify-center gap-2 px-5 py-3.5 font-bold text-[#0c1c24] bg-mint hover:brightness-110 transition"
