@@ -11,6 +11,7 @@ const nextConfig = {
         destination: '/compare-internet-options',
         permanent: true,
       },
+      { source: '/live-agent', destination: '/contact-us-to-compare', permanent: true },
     ];
   },
 };
