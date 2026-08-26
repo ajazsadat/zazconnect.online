@@ -73,11 +73,11 @@ export const SITE = {
   ],
 };
 
-/** Provider pages are disabled for now — see src/app/*-plans/page.js.disabled */
+
 export const PROVIDERS = [
-  // { name: "Xfinity", href: "/xfinity-plans", blurb: "Flexible cable & fiber-powered options" },
-  // { name: "Spectrum", href: "/spectrum-plans", blurb: "Wide coverage with simple plan tiers" },
-  // { name: "AT&T Fiber", href: "/att-plans", blurb: "Fiber speeds where the network reaches" },
+  { name: "Xfinity", href: "/xfinity-plans", blurb: "Flexible cable & fiber-powered options" },
+  { name: "Spectrum", href: "/spectrum-plans", blurb: "Wide coverage with simple plan tiers" },
+  { name: "AT&T Fiber", href: "/att-plans", blurb: "Fiber speeds where the network reaches" },
 ];
 
 export function openLiveChat() {
