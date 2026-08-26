@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { SITE } from '@/lib/site';
+import { PROVIDERS, SITE } from '@/lib/site';
 
 export default function Footer() {
   const pathname = usePathname();
@@ -45,7 +45,7 @@ export default function Footer() {
                 Contact Us
               </Link>
             </li>
-            {/* Provider links — disabled while the provider pages are commented out.
+            
             {PROVIDERS.map((p) => (
               <li key={p.href}>
                 <Link href={p.href} className="hover:text-mint">
@@ -53,7 +53,7 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
-            */}
+            
           </ul>
           <p className="text-white font-semibold mb-3 mt-8">Legal</p>
           <ul className="space-y-2 text-sm">
