@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { SITE } from '@/lib/site';
+import { PROVIDERS, SITE } from '@/lib/site';
 
 const nav = [
   { name: 'Home', href: '/' },
@@ -23,7 +23,7 @@ function headerDisclaimerForPath(pathname) {
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  // const [providersOpen, setProvidersOpen] = useState(false);
+  const [providersOpen, setProvidersOpen] = useState(false);
   const headerDisclaimer = headerDisclaimerForPath(pathname);
 
   if (pathname === '/compare-internet-options' || pathname === '/contact-us-to-compare') {
@@ -57,7 +57,7 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
-          {/* Providers dropdown — disabled while the provider pages are commented out.
+          
           <div className="relative">
             <button
               type="button"
@@ -84,7 +84,7 @@ export default function Header() {
               </div>
             )}
           </div>
-          */}
+        
         </nav>
 
         <a
