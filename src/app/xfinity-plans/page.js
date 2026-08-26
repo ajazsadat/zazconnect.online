@@ -24,37 +24,37 @@ export default function XfinityPage() {
         {
           name: '50 Mbps*',
           price: '35',
-          subtitle: '50/50 Mbps – browsing, email & video calls',
+          subtitle: 'Up to 50 Mbps Download – browsing, email & video calls',
           features: ['Small households (up to 4 devices)', 'Stream, video conferencing, downloads'],
         },
         {
           name: '300 Mbps*',
           price: '50',
-          subtitle: '300/300 Mbps – everyday streaming & browsing',
+          subtitle: 'Up to 300 Mbps Download – everyday streaming & browsing',
           features: ['Supports up to 5 devices', 'Everyday streaming & downloads'],
         },
         {
           name: '500 Mbps*',
           price: '60',
-          subtitle: '500/500 Mbps – multi-device homes',
+          subtitle: 'Up to 500 Mbps Download – multi-device homes',
           features: ['Connect up to 8 devices', 'Stream & video conferencing'],
         },
         {
           name: '1000 Mbps*',
           price: '70',
-          subtitle: '1000/1000 Mbps – heavy downloads',
+          subtitle: 'Up to 1000 Mbps Download – heavy downloads',
           features: ['Supports 12+ devices', 'Extreme streaming speed'],
         },
         {
           name: '1200 Mbps*',
           price: '80',
-          subtitle: '1200/1200 Mbps – 15+ devices',
+          subtitle: 'Up to 1200 Mbps Download – 15+ devices',
           features: ['Fast downloads & HD on multiple screens'],
         },
         {
           name: '2000 Mbps*',
           price: '100',
-          subtitle: '2000/2000 Mbps – unlimited devices',
+          subtitle: 'Up to 2000 Mbps Download – unlimited devices',
           features: ['Ultimate streaming & gaming experience'],
         },
       ]}

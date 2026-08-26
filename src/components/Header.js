@@ -13,11 +13,15 @@ const nav = [
   { name: 'Contact Us', href: '/contact' },
 ];
 
+const providerByPath = {
+  '/spectrum-plans': 'Spectrum',
+  '/xfinity-plans': 'Xfinity',
+  '/att-plans': 'AT&T',
+};
+
 function headerDisclaimerForPath(pathname) {
-  if (pathname === '/spectrum-plans') return SITE.spectrumHeaderDisclaimer;
-  if (pathname === '/xfinity-plans') return SITE.xfinityHeaderDisclaimer;
-  if (pathname === '/att-plans') return SITE.attHeaderDisclaimer;
-  return SITE.topDisclaimer;
+  const provider = providerByPath[pathname];
+  return provider ? SITE.providerHeaderDisclaimer(provider) : SITE.topDisclaimer;
 }
 
 export default function Header() {
@@ -57,7 +61,6 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
-          
           <div className="relative">
             <button
               type="button"
@@ -84,7 +87,6 @@ export default function Header() {
               </div>
             )}
           </div>
-        
         </nav>
 
         <a
@@ -117,14 +119,12 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
-          {/* Providers list — disabled while the provider pages are commented out.
           <p className="text-xs uppercase tracking-wider text-mint/80 pt-2">Providers</p>
           {PROVIDERS.map((p) => (
             <Link key={p.href} href={p.href} className="block pl-2" onClick={() => setOpen(false)}>
               {p.name}
             </Link>
           ))}
-          */}
           <a href={`tel:${SITE.phoneTel}`} className="block font-semibold text-mint pt-2">
             Call {SITE.phoneDisplay}
           </a>

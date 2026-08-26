@@ -28,8 +28,8 @@ export default function FeesDisclosuresPage() {
       </p>
       <p>
         {SITE.carrierDisclaimer} For related information, see our{' '}
-        <Link href="/reseller-disclosure" className="text-teal hover:underline">
-          Reseller Disclosure
+        <Link href="/comparison-disclosure" className="text-teal hover:underline">
+          Comparison &amp; Referral Disclosure
         </Link>{' '}
         and{' '}
         <Link href="/terms-conditions" className="text-teal hover:underline">

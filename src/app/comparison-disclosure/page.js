@@ -3,22 +3,22 @@ import { SITE } from '@/lib/site';
 import LegalArticle from '@/components/LegalArticle';
 
 export const metadata = {
-  title: `Reseller Disclosure | ${SITE.brandFull}`,
-  description: `Reseller and partnership disclosure for ${SITE.domain}, operated by ${SITE.legalName}.`,
+  title: `Comparison & Referral Disclosure | ${SITE.brandFull}`,
+  description: `Comparison, referral, and partnership disclosure for ${SITE.domain}, operated by ${SITE.legalName}.`,
 };
 
-export default function ResellerDisclosurePage() {
+export default function ComparisonDisclosurePage() {
   return (
-    <LegalArticle title="Reseller Disclosure">
+    <LegalArticle title="Comparison & Referral Disclosure">
       <p>
-        {SITE.operatedByLabel} is an independent authorized sales partner and reseller that helps customers compare,
-        select, and activate broadband, wireless, and digital services across the United States.
+        {SITE.referralDisclosure} We help customers compare and evaluate broadband, wireless, and digital services
+        available across the United States, and refer interested customers to the provider they choose.
       </p>
       <p>
         We are not owned, operated, or controlled by any internet service provider (ISP) or carrier. {SITE.legalName}{' '}
         does not own, operate, install, or directly provide telecommunications, internet, cable TV, or wireless
-        services. All broadband and wireless services featured on this website are delivered, installed, billed, and
-        supported directly by the respective licensed providers.
+        services, and does not sell or manage carrier accounts. All broadband and wireless services featured on this
+        website are delivered, installed, billed, and supported directly by the respective licensed providers.
       </p>
       <p>
         Our role is limited to providing informational resources and connecting interested consumers with available
@@ -27,8 +27,8 @@ export default function ResellerDisclosurePage() {
       </p>
       <p>
         {SITE.legalName} may receive a commission or referral incentive from these providers when a customer activates
-        or purchases a qualifying service through our platform or sales team. These commissions do not affect pricing —
-        the customer pays the same rates offered directly by the provider.
+        or purchases a qualifying service after being referred through our platform or team. These commissions do not
+        affect pricing — the customer pays the same rates offered directly by the provider.
       </p>
       <p>
         All service information, including pricing, availability, and terms, is based on data provided by each carrier.
