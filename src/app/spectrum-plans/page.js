@@ -1,5 +1,6 @@
 import ProviderPage from '@/components/ProviderPage';
 import { providerFaqs, providerContentSections } from '@/lib/providerContent';
+import { SITE } from '@/lib/site';
 
 export const metadata = {
   title: 'Compare Spectrum Internet & Cable Services | ZazConnect',
@@ -48,6 +49,7 @@ export default function SpectrumPage() {
       name="Spectrum"
       tagline="Widely available cable internet with flexible plan options for every household size."
       introTitle="Compare Spectrum internet packages — independent comparison"
+      bodyDisclosure={SITE.comparisonPlatformDisclosure}
       topicTabs={SPECTRUM_TOPIC_TABS}
       servicesGlance={SPECTRUM_SERVICES_GLANCE}
       benefits={[

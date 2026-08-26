@@ -16,7 +16,7 @@ export default function TermsPage() {
             {`Welcome to ${SITE.domain}, operated by ${SITE.legalName}. By accessing or using our website and services, you agree to these Terms of Service.`}
           </p>
           <p>
-            {`${SITE.operatedByLabel} ("we," "us," "our") is a certified third-party reseller connecting customers with licensed telecommunications and technology service providers across the United States. We do not own or operate any internet, cable, wireless, or communication networks, and we are not owned, operated, or controlled by any internet service provider (ISP) or carrier.`}
+            {`${SITE.operatedByLabel} ("we," "us," "our") is an independent comparison and referral service connecting customers with licensed telecommunications and technology service providers across the United States. We do not own or operate any internet, cable, wireless, or communication networks, we do not sell or manage carrier accounts, and we are not owned, operated, or controlled by any internet service provider (ISP) or carrier.`}
           </p>
 
           <h2 className="font-display text-xl font-bold text-ink pt-4">Acceptance of Terms</h2>
@@ -50,8 +50,8 @@ export default function TermsPage() {
             We do not charge you for consultation or comparison assistance. We may earn a commission or referral fee
             from a provider when you activate service through us. This does not change the price you pay or influence
             which options we show you. Full detail is set out in our{' '}
-            <Link href="/reseller-disclosure" className="text-teal hover:underline">
-              Reseller Disclosure
+            <Link href="/comparison-disclosure" className="text-teal hover:underline">
+              Comparison &amp; Referral Disclosure
             </Link>{' '}
             and{' '}
             <Link href="/fees-disclosures" className="text-teal hover:underline">

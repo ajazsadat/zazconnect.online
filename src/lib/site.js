@@ -1,6 +1,3 @@
-/** Providers we hold an authorized dealer agreement with. Everything else falls back to independent-resource wording. */
-export const AUTHORIZED_DEALER_PROVIDERS = ["Xfinity", "AT&T"];
-
 export const SITE = {
   brand: "ZazConnect",
   brandFull: "ZazConnect",
@@ -17,24 +14,28 @@ export const SITE = {
   },
   topDisclaimer:
     "ZazConnect (operated by Maverick Wells Inc) — helps you compare top internet and TV plans from leading and trusted providers available in your area.",
-  spectrumHeaderDisclaimer:
-    "Why Choose ZazConnect? We help you compare top internet and TV plans from leading and trusted providers available in your area. ZazConnect is an independent resource. We do not sell or manage Spectrum accounts; all information is for guidance only.",
-  xfinityHeaderDisclaimer:
-    "Why Choose ZazConnect? We help you compare top internet and TV plans from leading and trusted providers available in your area. ZazConnect is an authorized Xfinity dealer. However, ZazConnect does not provide Xfinity customer service or manage Xfinity accounts. All service-related support is handled directly by Xfinity.",
-  attHeaderDisclaimer:
-    "Why Choose ZazConnect? We help you compare top internet and TV plans from leading and trusted providers available in your area. ZazConnect is an authorized AT&T dealer. However, ZazConnect does not provide AT&T customer service or manage AT&T accounts. All service-related support is handled directly by AT&T.",
+  whyChooseIntro:
+    "We help you compare top internet and TV plans from leading and trusted providers available in your area.",
   carrierDisclaimer:
     "We are not owned, operated, or controlled by any internet service provider (ISP) or carrier.",
-  providerIndependentDisclaimer(providerName) {
-    return `${this.brandFull} is an independent resource. We do not sell or manage ${providerName} accounts; all information is for guidance only.`;
-  },
-  providerDealerDisclaimer(providerName) {
-    return `${this.brandFull} is an authorized ${providerName} dealer. However, ${this.brandFull} does not provide ${providerName} customer service or manage ${providerName} accounts. All service-related support is handled directly by ${providerName}.`;
-  },
+  /**
+   * Google Ads misrepresentation policy: provider pages may never claim reseller or
+   * dealer status, and must state that account support stays with the carrier.
+   */
   providerStatusDisclaimer(providerName) {
-    return AUTHORIZED_DEALER_PROVIDERS.includes(providerName)
-      ? this.providerDealerDisclaimer(providerName)
-      : this.providerIndependentDisclaimer(providerName);
+    return `${this.brandFull} is an independent comparison service. ${this.brandFull} does not provide ${providerName} customer service or manage accounts. All service support is handled directly by ${providerName}.`;
+  },
+  providerHeaderDisclaimer(providerName) {
+    return `Why Choose ${this.brandFull}? ${this.whyChooseIntro} ${this.providerStatusDisclaimer(providerName)}`;
+  },
+  get referralDisclosure() {
+    return `${this.operatedByLabel} is an independent comparison and referral service.`;
+  },
+  get comparisonPlatformDisclosure() {
+    return `${this.operatedByLabel} is an independent comparison platform.`;
+  },
+  get supportPageDisclosure() {
+    return `${this.referralDisclosure} We help you evaluate internet and TV plans available in your area. We do not sell or manage carrier accounts directly.`;
   },
   beforeFooterDisclaimer:
     "Maverick Wells Inc operates as an independent comparison platform that helps users explore and evaluate Internet and TV plans from multiple trusted providers. We do not directly sell, install, or manage any Internet or TV services.",
@@ -67,12 +68,11 @@ export const SITE = {
   legalLinks: [
     { name: "Terms & Conditions", href: "/terms-conditions" },
     { name: "Privacy Policy", href: "/privacy-policy" },
-    { name: "Reseller Disclosure", href: "/reseller-disclosure" },
+    { name: "Comparison & Referral Disclosure", href: "/comparison-disclosure" },
     { name: "Cookie Policy", href: "/cookie-policy" },
     { name: "Fees & Disclosures", href: "/fees-disclosures" },
   ],
 };
-
 
 export const PROVIDERS = [
   { name: "Xfinity", href: "/xfinity-plans", blurb: "Flexible cable & fiber-powered options" },

@@ -68,6 +68,8 @@ export default function ProviderPage({
   faqs = [],
   topicTabs = [],
   servicesGlance,
+  bodyDisclosure = SITE.referralDisclosure,
+  comparison,
 }) {
   const displayName = brandMark || name;
 
@@ -98,7 +100,7 @@ export default function ProviderPage({
                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
               />
             </svg>
-            Contact Us Now
+            Contact Us to Compare
           </Link>
           <a
             href={`tel:${SITE.phoneTel}`}
@@ -138,9 +140,8 @@ export default function ProviderPage({
             {introTitle || `Compare ${displayName} with ${SITE.brandFull}`}
           </h2>
           <p className="text-muted leading-relaxed">
-            {SITE.brandFull} (operated by {SITE.legalName}) is an independent, authorized reseller. Call to
-            compare providers — we help you review {name} options alongside other providers so you can choose what fits,
-            then enroll directly with the provider.
+            {bodyDisclosure} Call to compare providers — we help you review {name} options alongside other providers so
+            you can choose what fits, then enroll directly with the provider.
           </p>
         </div>
         <ul className="space-y-3">
@@ -236,7 +237,7 @@ export default function ProviderPage({
         </section>
       )}
 
-      <ProviderComparisonTable />
+      <ProviderComparisonTable title={comparison?.title} columns={comparison?.columns} />
       <ProviderFaq faqs={faqs} />
 
       <section className="w-full bg-[#eef5f7] border-t border-[var(--line)]">

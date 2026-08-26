@@ -17,7 +17,7 @@ export default function PrivacyPage() {
             {`${SITE.brandFull} ("we," "us," "our"), operated by ${SITE.legalName}, manages this website and associated promotional brands. This Privacy Policy describes how we collect, use, and share information when you visit our website or contact us.`}
           </p>
           <p>
-            {`${SITE.brandFull} is an independent, authorized reseller. We do not provide internet, TV, or phone services directly, and we are not owned, operated, or controlled by any internet service provider (ISP) or carrier.`}
+            {`${SITE.referralDisclosure} We do not provide internet, TV, or phone services directly, and we are not owned, operated, or controlled by any internet service provider (ISP) or carrier.`}
           </p>
           <h2 className="font-display text-xl font-bold text-ink pt-4">Information we collect</h2>
           <p>
@@ -34,7 +34,7 @@ export default function PrivacyPage() {
           <h2 className="font-display text-xl font-bold text-ink pt-4">Sharing your information</h2>
           <p>
             We do not sell your personal information. We may share the details you provide with participating
-            providers, authorized retailers, and master-dealer partners for the sole purpose of checking availability,
+            providers and their referral partners for the sole purpose of checking availability,
             preparing a quote, and completing enrollment when you ask us to. Those partners are required to handle your
             information in line with applicable data protection laws and to use it only for the service you requested.
           </p>

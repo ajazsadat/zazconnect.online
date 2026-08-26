@@ -108,7 +108,7 @@ export default function IndependentSupportHelp({ fullscreen = false }) {
         </div>
 
         <p className="page-disclaimer mt-6 max-w-3xl text-center text-xs text-muted leading-relaxed sm:text-sm">
-          {`${SITE.brandFull} is an independent, authorized reseller. We do not provide internet, TV, or phone services directly, and we are not owned, operated, or controlled by any internet service provider (ISP) or carrier. For billing or existing account support, please contact your provider directly.`}
+          {`${SITE.supportPageDisclosure} ${SITE.carrierDisclaimer} For billing or existing account support, please contact your provider directly.`}
         </p>
       </div>
     </div>

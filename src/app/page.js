@@ -11,15 +11,15 @@ export default function Home() {
   const faqs = [
     {
       q: 'Which internet providers can I find through your platform?',
-      a: `${SITE.operatedByLabel} partners with a network of licensed resellers, authorized retailers, and master-dealer distributors representing leading U.S. telecom and internet service brands. Availability and offers vary by ZIP code — call us at ${SITE.phoneDisplay} to view current plan options in your area.`,
+      a: `${SITE.operatedByLabel} compares plans from leading U.S. telecom and internet service brands. Availability and offers vary by ZIP code — call us at ${SITE.phoneDisplay} to review current plan options in your area.`,
     },
     {
       q: 'How do I compare internet providers in my area?',
       a: 'We compare speed, reliability, and pricing across multiple licensed providers so you can pick the plan that fits how you use the internet — streaming, remote work, or gaming.',
     },
     {
-      q: 'What does it mean to be an “authorized reseller” or “partner network”?',
-      a: `We are not the direct provider of internet, wireless, or cable services. Instead, ${SITE.operatedByLabel} operates as an authorized reseller and licensed retailer for multiple carrier and service networks across the U.S. This means we’re approved to market, compare, and facilitate service orders through official partner and master-dealer programs — giving customers access to more plan options in one place. Services are fulfilled, installed, and billed by the provider you choose.`,
+      q: 'What does it mean to be a “comparison and referral service”?',
+      a: `We are not the direct provider of internet, wireless, or cable services. ${SITE.operatedByLabel} is an independent comparison and referral service: we help you evaluate and compare plans from multiple carriers across the U.S. in one place, then refer you to the provider you choose. We do not sell or manage carrier accounts. Services are fulfilled, installed, and billed by the provider you choose.`,
     },
     {
       q: 'Are there any installation or equipment fees?',
@@ -132,9 +132,9 @@ export default function Home() {
               Independent plan comparison
             </h2>
             <p className="text-muted text-lg leading-relaxed">
-              {SITE.operatedByLabel} is an independent, authorized reseller that works with multiple leading
-              broadband, cable, and wireless providers. We don’t favor any carrier — our recommendations are based on
-              your location, your needs, and your budget.
+              {SITE.referralDisclosure} We compare plans across multiple leading broadband, cable, and wireless
+              providers and don’t favor any carrier — our recommendations are based on your location, your needs, and
+              your budget.
             </p>
             <p className="text-muted text-lg leading-relaxed mt-4">
               We are not an internet service provider and do not own or operate network infrastructure. All services are
@@ -160,8 +160,8 @@ export default function Home() {
           <p className="text-muted text-lg leading-relaxed max-w-3xl">
             A single, convenient platform to explore high-speed Internet, Cable TV, Home Phone, Wireless, and Home
             Security options—featuring availability checks, upfront pricing guidance, and easy installation coordination
-            as an independent, authorized retailer and licensed reseller for several leading U.S. telecom and home
-            service providers.
+            as an independent comparison and referral service covering several leading U.S. telecom and home service
+            providers.
           </p>
         </div>
       </section>

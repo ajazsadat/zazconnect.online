@@ -2,7 +2,6 @@
 const nextConfig = {
   async redirects() {
     return [
-      // Provider pages are disabled for now, so these targets no longer exist.
       { source: '/compare/xfinity-plans', destination: '/xfinity-plans', permanent: true },
       { source: '/compare/spectrum-plans', destination: '/spectrum-plans', permanent: true },
       { source: '/compare/att-plans', destination: '/att-plans', permanent: true },
@@ -13,6 +12,7 @@ const nextConfig = {
         permanent: true,
       },
       { source: '/live-agent', destination: '/contact-us-to-compare', permanent: true },
+      { source: '/reseller-disclosure', destination: '/comparison-disclosure', permanent: true },
     ];
   },
 };

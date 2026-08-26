@@ -8,7 +8,7 @@ import { PROVIDERS, SITE } from '@/lib/site';
 export default function Footer() {
   const pathname = usePathname();
 
-  if (pathname === '/compare-internet-options' || pathname === '/contact-us-to-compare') {
+  if (pathname === '/contact-us-to-compare') {
     return null;
   }
 
@@ -24,7 +24,7 @@ export default function Footer() {
             className="h-12 w-auto mb-4"
           />
           <p className="text-sm leading-relaxed">
-            Operated by {SITE.legalName}. Independent, authorized reseller — not a carrier.
+            Operated by {SITE.legalName}. Independent comparison platform — not a carrier.
           </p>
         </div>
         <div>
@@ -45,7 +45,6 @@ export default function Footer() {
                 Contact Us
               </Link>
             </li>
-            
             {PROVIDERS.map((p) => (
               <li key={p.href}>
                 <Link href={p.href} className="hover:text-mint">
@@ -53,7 +52,6 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
-            
           </ul>
           <p className="text-white font-semibold mb-3 mt-8">Legal</p>
           <ul className="space-y-2 text-sm">

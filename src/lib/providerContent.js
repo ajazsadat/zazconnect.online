@@ -3,12 +3,8 @@ import { SITE } from '@/lib/site';
 export function spectrumFaqs() {
   return [
     {
-      q: 'Are you an official Spectrum reseller?',
-      a: `No. ${SITE.brandFull} is not an authorized Spectrum reseller and does not sell Spectrum packages directly. We’re an independent comparison and referral service — our role is to help you explore options and understand what may be available in your area.`,
-    },
-    {
-      q: 'How can I contact Spectrum customer support?',
-      a: `We’re not able to provide Spectrum account support directly. For billing, technical support, or service issues, contact Spectrum through their official channels — listed on Spectrum’s website or your Spectrum bill. We can still help you compare plans and check general availability by address.`,
+      q: 'Do you sell Spectrum service?',
+      a: `No. ${SITE.brandFull} does not sell Spectrum packages or manage Spectrum accounts. We’re an independent comparison and referral service — our role is to help you explore options and understand what may be available in your area.`,
     },
     {
       q: `What makes ${SITE.brandFull} different?`,
@@ -30,10 +26,6 @@ export function attFaqs() {
     {
       q: 'How much does AT&T Internet cost?',
       a: 'AT&T Fiber and wireless home internet pricing depends on the speed tier and your address. Fiber plans often start in a promotional range for mid-tier speeds in eligible areas. Taxes, fees, and installation charges can be extra — confirm the final quote for your location before you enroll.',
-    },
-    {
-      q: 'How can I contact AT&T customer service?',
-      a: `We’re not able to provide AT&T account support directly. Use AT&T’s official channels — phone, online chat, or a local store. Current contact details are on AT&T’s website or your AT&T bill. We can still help you compare plans by address.`,
     },
     {
       q: 'Does AT&T own DIRECTV?',
@@ -74,7 +66,7 @@ export function xfinityFaqs() {
     },
     {
       q: `What does ${SITE.brandFull} do for Xfinity comparisons?`,
-      a: `We help you compare plans, review features and typical pricing ranges, and check what may be available at your address. ${SITE.brandFull} is an authorized Xfinity dealer, but we don’t provide Xfinity customer service or manage Xfinity accounts after activation — that’s handled directly by Xfinity.`,
+      a: `We help you compare plans, review features and typical pricing ranges, and check what may be available at your address. ${SITE.brandFull} is an independent comparison and referral service — we don’t provide Xfinity customer service or manage Xfinity accounts, which is handled directly by Xfinity.`,
     },
     {
       q: 'Do Xfinity plans include equipment and apps?',
