@@ -16,10 +16,9 @@ export default function FeesDisclosuresPage() {
         service provider, not by {SITE.legalName}.
       </p>
       <p>
-        We may receive a one-time or recurring commission from our partner providers for successful activations or
-        continued customer relationships. These payments are part of standard industry partnerships and do not influence
-        our recommendations — our goal is to help customers compare options and match with a suitable service for their
-        needs and location.
+        We may receive a one-time or recurring commission from a service provider when a customer we refer activates or
+        continues service. These referral payments do not influence our recommendations — our goal is to help customers
+        compare options and match with a suitable service for their needs and location.
       </p>
       <p>
         All offers, pricing, and promotions are subject to provider terms and availability. Taxes, surcharges, early

@@ -265,8 +265,8 @@ export default function ContactForm({
           <Link href="/privacy-policy" className="text-teal hover:underline">
             Privacy Policy
           </Link>
-          , and consent to receive calls/texts from {SITE.brandFull} and its partner providers about my request. Consent
-          is not a condition of purchase.
+          , and consent to receive calls and texts from {SITE.brandFull} about my comparison request. Consent is not a
+          condition of purchase, and I can opt out at any time.
         </span>
       </label>
 
