@@ -12,7 +12,6 @@ const SPECTRUM_TOPIC_TABS = [
   { label: 'About Spectrum', hash: '' },
   { label: 'Internet', hash: 'internet' },
   { label: 'TV', hash: 'tv' },
-  { label: 'Customer Service', hash: 'customer-service' },
 ];
 
 const SPECTRUM_SERVICES_GLANCE = {
