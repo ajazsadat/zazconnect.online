@@ -8,6 +8,8 @@ import { PROVIDERS, SITE } from '@/lib/site';
 
 const nav = [
   { name: 'Home', href: '/' },
+  { name: 'Services', href: '/#services' },
+  { name: 'Choose Us', href: '/#choose-us' },
   { name: 'About Us', href: '/about' },
   { name: 'Contact Us to Compare', href: '/contact-us-to-compare' },
   { name: 'Contact Us', href: '/contact' },
@@ -51,7 +53,7 @@ export default function Header() {
           />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-[#c5dde0]">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-medium text-[#c5dde0]">
           {nav.map((item) => (
             <Link
               key={item.href}
@@ -98,7 +100,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="md:hidden p-2 text-white"
+          className="lg:hidden p-2 text-white"
           aria-label="Menu"
           onClick={() => setOpen((v) => !v)}
         >
@@ -113,7 +115,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-white/10 bg-[#0c1c24] px-4 py-4 space-y-3 text-[#c5dde0]">
+        <div className="lg:hidden border-t border-white/10 bg-[#0c1c24] px-4 py-4 space-y-3 text-[#c5dde0]">
           {nav.map((item) => (
             <Link key={item.href} href={item.href} className="block font-medium" onClick={() => setOpen(false)}>
               {item.name}

@@ -1,4 +1,4 @@
-import IndependentSupportHelp from '@/components/IndependentSupportHelp';
+import ConnectOptions from '@/components/ConnectOptions';
 import { SITE } from '@/lib/site';
 
 export const metadata = {
@@ -7,5 +7,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <IndependentSupportHelp />;
+  return <ConnectOptions disclosure={SITE.comparePageDisclosure} showAddress />;
 }
