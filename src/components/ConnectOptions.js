@@ -76,7 +76,7 @@ export default function ConnectOptions({ disclosure, showAddress = false }) {
                   className="h-10 w-10 object-contain"
                 />
               </span>
-              <h2 className="mt-5 font-display text-xl font-bold text-ink sm:text-2xl">Call to compare now</h2>
+              <h2 className="mt-5 font-display text-xl font-bold text-ink sm:text-2xl">Phone Call</h2>
               <a href={`tel:${SITE.phoneTel}`} className={`${actionClass} bg-mint text-[#0c1c24] hover:brightness-110`}>
                 <PhoneIcon className="h-5 w-5 shrink-0" />
                 {SITE.phoneDisplay}
