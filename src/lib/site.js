@@ -25,6 +25,9 @@ export const SITE = {
   providerStatusDisclaimer(providerName) {
     return `${this.brandFull} is an independent comparison service. ${this.brandFull} does not provide ${providerName} customer service or manage accounts. All service support is handled directly by ${providerName}.`;
   },
+  providerPlanDetailsNote(providerName) {
+    return `Plan details, pricing, speeds, and features are based on publicly available ${providerName} information and are subject to change. Speeds shown are maximum wired download speeds and are not guaranteed; actual speeds vary by address, equipment, and network conditions. ${providerName} and related marks are trademarks of their respective owners and are used for identification and comparison only.`;
+  },
   providerHeaderDisclaimer(providerName) {
     return `Why Choose ${this.brandFull}? ${this.whyChooseIntro} ${this.providerStatusDisclaimer(providerName)}`;
   },

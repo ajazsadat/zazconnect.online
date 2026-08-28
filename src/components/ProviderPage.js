@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { SITE } from '@/lib/site';
 import ProviderFaq from '@/components/ProviderFaq';
 import ProviderComparisonTable from '@/components/ProviderComparisonTable';
+import OfferTerms from '@/components/OfferTerms';
 import ProviderTopicTabs from '@/components/ProviderTopicTabs';
 import ContactForm from '@/components/ContactForm';
 
@@ -160,6 +161,7 @@ export default function ProviderPage({
               {plansNote ||
                 `*Pricing may vary by ZIP code and is subject to change. Details shown are based on publicly available ${name} information and may not reflect current offers. Taxes, fees, and equipment costs are extra.`}
             </p>
+            <OfferTerms providerName={name} />
           </div>
           <div className="divide-y divide-[var(--line)] border border-[var(--line)]">
             {plans.map((plan) => (
