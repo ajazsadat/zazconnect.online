@@ -77,9 +77,6 @@ export default function ConnectOptions({ disclosure, showAddress = false }) {
                 />
               </span>
               <h2 className="mt-5 font-display text-xl font-bold text-ink sm:text-2xl">Call to compare now</h2>
-              <p className="mt-2 flex-grow text-[15px] leading-relaxed text-muted">
-                Speak with our team and get plan options for your address.
-              </p>
               <a href={`tel:${SITE.phoneTel}`} className={`${actionClass} bg-mint text-[#0c1c24] hover:brightness-110`}>
                 <PhoneIcon className="h-5 w-5 shrink-0" />
                 {SITE.phoneDisplay}
@@ -91,9 +88,6 @@ export default function ConnectOptions({ disclosure, showAddress = false }) {
                 <MessageIcon className="h-7 w-7 text-teal" />
               </span>
               <h2 className="mt-5 font-display text-xl font-bold text-ink sm:text-2xl">Send a message</h2>
-              <p className="mt-2 flex-grow text-[15px] leading-relaxed text-muted">
-                Prefer not to call? Fill out our contact form and we&apos;ll follow up.
-              </p>
               <Link href="/contact" className={`${actionClass} bg-teal text-white hover:bg-[var(--teal-deep)]`}>
                 Go to contact form
               </Link>
