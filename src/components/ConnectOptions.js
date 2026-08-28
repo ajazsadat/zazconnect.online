@@ -53,73 +53,98 @@ const actionClass =
 
 export default function ConnectOptions({ disclosure, showAddress = false }) {
   return (
-    <div className="relative flex min-h-screen flex-col overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
+    <div className="flex min-h-screen flex-col bg-[var(--background)] text-[var(--foreground)]">
       <HideLiveChat />
-      <div className="absolute inset-0 soft-grid opacity-70" aria-hidden="true" />
 
-      <div className="relative mx-auto flex w-full max-w-4xl flex-1 flex-col items-center px-4 py-10 sm:px-6 sm:py-14">
-        <Link href="/" className="inline-flex items-center justify-center">
-          <Image
-            src="/images/logo.png"
-            alt={`${SITE.brandFull} logo`}
-            width={180}
-            height={95}
-            className="h-11 w-auto sm:h-14"
-            priority
-          />
-        </Link>
+      <div className="relative flex flex-1 flex-col overflow-hidden">
+        <div className="absolute inset-0 soft-grid opacity-70" aria-hidden="true" />
 
-        <h1 className="mt-7 max-w-2xl text-center font-display text-[26px] font-extrabold leading-tight tracking-tight text-ink sm:mt-9 sm:text-4xl">
-          How would you like to connect?
-        </h1>
-        <p className="mt-3 max-w-xl text-center text-[15px] leading-relaxed text-muted sm:text-base">
-          Pick whichever is easiest — we&apos;ll help you compare internet and TV plans available at your address.
-        </p>
-
-        <div className="mt-8 grid w-full gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5">
-          <div className={cardClass}>
-            <span className={badgeClass}>
-              <Image
-                src="/images/support/human-agent-icon.png"
-                alt=""
-                width={218}
-                height={216}
-                className="h-10 w-10 object-contain"
-              />
-            </span>
-            <h2 className="mt-5 font-display text-xl font-bold text-ink sm:text-2xl">Call to compare now</h2>
-            <p className="mt-2 flex-grow text-[15px] leading-relaxed text-muted">
-              Speak with our team and get plan options for your address.
-            </p>
-            <a href={`tel:${SITE.phoneTel}`} className={`${actionClass} bg-mint text-[#0c1c24] hover:brightness-110`}>
-              <PhoneIcon className="h-5 w-5 shrink-0" />
-              {SITE.phoneDisplay}
-            </a>
-          </div>
-
-          <div className={cardClass}>
-            <span className={badgeClass}>
-              <MessageIcon className="h-7 w-7 text-teal" />
-            </span>
-            <h2 className="mt-5 font-display text-xl font-bold text-ink sm:text-2xl">Send a message</h2>
-            <p className="mt-2 flex-grow text-[15px] leading-relaxed text-muted">
-              Prefer not to call? Fill out our contact form and we&apos;ll follow up.
-            </p>
-            <Link href="/contact" className={`${actionClass} bg-teal text-white hover:bg-[var(--teal-deep)]`}>
-              Go to contact form
-            </Link>
-          </div>
-        </div>
-
-        <p className="mt-8 max-w-2xl text-center text-xs leading-relaxed text-muted sm:mt-10 sm:text-sm">
-          {disclosure}
-        </p>
-
-        {showAddress && (
-          <p className="mt-6 text-center text-xs text-muted sm:mt-8">
-            {SITE.addressLine1}, {SITE.addressLine2}
+        <div className="relative mx-auto flex w-full max-w-4xl flex-1 flex-col items-center px-4 py-10 sm:px-6 sm:py-14">
+          <h1 className="max-w-3xl text-center font-display text-[26px] font-extrabold leading-tight tracking-tight text-ink sm:text-4xl">
+            How would you like to connect
+            <span className="block">for Internet Services and Assistance?</span>
+          </h1>
+          <p className="mt-3 max-w-xl text-center text-[15px] leading-relaxed text-muted sm:text-base">
+            Pick whichever is easiest — we&apos;ll help you compare internet and TV plans available at your address.
           </p>
-        )}
+
+          <div className="mt-8 grid w-full gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5">
+            <div className={cardClass}>
+              <span className={badgeClass}>
+                <Image
+                  src="/images/support/human-agent-icon.png"
+                  alt=""
+                  width={218}
+                  height={216}
+                  className="h-10 w-10 object-contain"
+                />
+              </span>
+              <h2 className="mt-5 font-display text-xl font-bold text-ink sm:text-2xl">Call to compare now</h2>
+              <p className="mt-2 flex-grow text-[15px] leading-relaxed text-muted">
+                Speak with our team and get plan options for your address.
+              </p>
+              <a href={`tel:${SITE.phoneTel}`} className={`${actionClass} bg-mint text-[#0c1c24] hover:brightness-110`}>
+                <PhoneIcon className="h-5 w-5 shrink-0" />
+                {SITE.phoneDisplay}
+              </a>
+            </div>
+
+            <div className={cardClass}>
+              <span className={badgeClass}>
+                <MessageIcon className="h-7 w-7 text-teal" />
+              </span>
+              <h2 className="mt-5 font-display text-xl font-bold text-ink sm:text-2xl">Send a message</h2>
+              <p className="mt-2 flex-grow text-[15px] leading-relaxed text-muted">
+                Prefer not to call? Fill out our contact form and we&apos;ll follow up.
+              </p>
+              <Link href="/contact" className={`${actionClass} bg-teal text-white hover:bg-[var(--teal-deep)]`}>
+                Go to contact form
+              </Link>
+            </div>
+          </div>
+
+          <p className="mt-8 max-w-2xl text-center text-xs leading-relaxed text-muted sm:mt-10 sm:text-sm">
+            {disclosure}
+          </p>
+
+          {showAddress && (
+            <div className="mt-8 w-full border-t border-[var(--line)] pt-6 sm:mt-10">
+              {/*
+                Kept in the markup but visually hidden, mirroring the reference site's
+                agent pages. Do not "fix" the hidden class — it is intentional.
+              */}
+              <nav aria-label="Legal" className="hidden">
+                <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted">
+                  {SITE.legalLinks.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href} className="hover:text-teal hover:underline">
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+              <p className="text-center text-xs text-muted">
+                {SITE.addressLine1}, {SITE.addressLine2}
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* The logo artwork is white, so it needs a dark band to stay legible. */}
+      <div className="bg-[#0c1c24]">
+        <div className="mx-auto flex w-full max-w-4xl items-center justify-center px-4 py-7 sm:px-6 sm:py-8">
+          <Link href="/" className="inline-flex items-center justify-center">
+            <Image
+              src="/images/logo.png"
+              alt={`${SITE.brandFull} logo`}
+              width={320}
+              height={169}
+              className="h-16 w-auto sm:h-20"
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );
