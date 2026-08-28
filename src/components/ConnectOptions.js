@@ -62,11 +62,8 @@ export default function ConnectOptions({ disclosure, showAddress = false }) {
         <div className="relative mx-auto flex w-full max-w-4xl flex-1 flex-col items-center px-4 py-10 sm:px-6 sm:py-14">
           <h1 className="max-w-3xl text-center font-display text-[26px] font-extrabold leading-tight tracking-tight text-ink sm:text-4xl">
             How would you like to connect
-            <span className="block">for Internet Services and Assistance?</span>
+            <span className="block">for Internet and TV Services?</span>
           </h1>
-          <p className="mt-3 max-w-xl text-center text-[15px] leading-relaxed text-muted sm:text-base">
-            Pick whichever is easiest — we&apos;ll help you compare internet and TV plans available at your address.
-          </p>
 
           <div className="mt-8 grid w-full gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5">
             <div className={cardClass}>
@@ -79,10 +76,7 @@ export default function ConnectOptions({ disclosure, showAddress = false }) {
                   className="h-10 w-10 object-contain"
                 />
               </span>
-              <h2 className="mt-5 font-display text-xl font-bold text-ink sm:text-2xl">Call to compare now</h2>
-              <p className="mt-2 flex-grow text-[15px] leading-relaxed text-muted">
-                Speak with our team and get plan options for your address.
-              </p>
+              <h2 className="mt-5 font-display text-xl font-bold text-ink sm:text-2xl">Phone Call</h2>
               <a href={`tel:${SITE.phoneTel}`} className={`${actionClass} bg-mint text-[#0c1c24] hover:brightness-110`}>
                 <PhoneIcon className="h-5 w-5 shrink-0" />
                 {SITE.phoneDisplay}
@@ -94,9 +88,6 @@ export default function ConnectOptions({ disclosure, showAddress = false }) {
                 <MessageIcon className="h-7 w-7 text-teal" />
               </span>
               <h2 className="mt-5 font-display text-xl font-bold text-ink sm:text-2xl">Send a message</h2>
-              <p className="mt-2 flex-grow text-[15px] leading-relaxed text-muted">
-                Prefer not to call? Fill out our contact form and we&apos;ll follow up.
-              </p>
               <Link href="/contact" className={`${actionClass} bg-teal text-white hover:bg-[var(--teal-deep)]`}>
                 Go to contact form
               </Link>
