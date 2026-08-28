@@ -35,68 +35,45 @@ const AT_T_FIBER_COLUMN = {
   ],
 };
 
-const CABLE_INTERNET_COLUMN = {
-  name: 'Cable Internet (typical)',
+const XFINITY_COLUMN = {
+  name: 'Xfinity (Comcast)',
   values: [
-    'Up to about 2 Gbps download (select areas)',
-    'Typically much lower upload than download',
+    'Up to 2 Gbps download (select areas)',
+    'Typically lower upload vs download on cable',
     'From about $30/mo (where available)',
-    'Promotional rates often step up after the intro period',
-    'Mixed satisfaction by market',
-    'Limited true fiber; mostly hybrid cable network',
-    'Broad coverage across established cable markets',
+    'Some plans offer multi-year price locks',
+    'Mixed to improving satisfaction by market',
+    'Limited true fiber; mostly cable network',
+    'Strong coverage in many cable markets',
     'Generally strong, can vary with network congestion',
     'Basic security; add-ons often available',
     'No annual contracts on many newer offers',
-    'Data caps on some plans unless an unlimited add-on applies',
+    'Data caps on many plans unless unlimited add-on',
     'Strong internet + mobile/TV bundling',
-    'Coverage, budget plans, and bundling deals',
+    'Coverage + bundling deals',
   ],
 };
 
-export const AT_T_VS_CABLE_COMPARISON = {
-  title: 'AT&T Fiber vs. Cable Internet: How the Options Compare',
-  columns: [AT_T_FIBER_COLUMN, CABLE_INTERNET_COLUMN],
+const SPECTRUM_COLUMN = {
+  name: 'Spectrum (Charter)',
+  values: [
+    'Up to 1 Gbps (select areas)',
+    'Typically lower upload on cable',
+    'From about $30/mo (where available)',
+    'Fewer long-term price-lock guarantees',
+    'Mixed reviews by market',
+    'Limited fiber; mostly cable',
+    'Good coverage in many cable markets',
+    'Good overall; consistency can vary',
+    'Basic security features',
+    'No contracts on many plans',
+    'No data caps on many plans',
+    'Fewer bundle advantages than some peers',
+    'Budget + simple plans',
+  ],
 };
 
-const DEFAULT_COLUMNS = [
-  {
-    name: 'Xfinity (Comcast)',
-    values: [
-      'Up to 2 Gbps download (select areas)',
-      'Typically lower upload vs download on cable',
-      'From about $30/mo (where available)',
-      'Some plans offer multi-year price locks',
-      'Mixed to improving satisfaction by market',
-      'Limited true fiber; mostly cable network',
-      'Strong coverage in many cable markets',
-      'Generally strong, can vary with network congestion',
-      'Basic security; add-ons often available',
-      'No annual contracts on many newer offers',
-      'Data caps on many plans unless unlimited add-on',
-      'Strong internet + mobile/TV bundling',
-      'Coverage + bundling deals',
-    ],
-  },
-  {
-    name: 'Spectrum (Charter)',
-    values: [
-      'Up to 1 Gbps (select areas)',
-      'Typically lower upload on cable',
-      'From about $30/mo (where available)',
-      'Fewer long-term price-lock guarantees',
-      'Mixed reviews by market',
-      'Limited fiber; mostly cable',
-      'Good coverage in many cable markets',
-      'Good overall; consistency can vary',
-      'Basic security features',
-      'No contracts on many plans',
-      'No data caps on many plans',
-      'Fewer bundle advantages than some peers',
-      'Budget + simple plans',
-    ],
-  },
-];
+const DEFAULT_COLUMNS = [AT_T_FIBER_COLUMN, XFINITY_COLUMN, SPECTRUM_COLUMN];
 
 export default function ProviderComparisonTable({ title, columns = DEFAULT_COLUMNS }) {
   return (
@@ -113,7 +90,7 @@ export default function ProviderComparisonTable({ title, columns = DEFAULT_COLUM
           enroll.
         </p>
         <div className="overflow-x-auto border border-[var(--line)]">
-          <table className="w-full min-w-[720px] text-left text-sm">
+          <table className="w-full min-w-[860px] text-left text-sm">
             <thead className="bg-[#eef5f6] text-ink">
               <tr>
                 <th scope="col" className="px-4 py-3 font-semibold sticky left-0 bg-[#eef5f6] z-10 min-w-[140px]">

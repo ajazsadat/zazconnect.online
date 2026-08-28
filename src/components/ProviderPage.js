@@ -69,7 +69,6 @@ export default function ProviderPage({
   topicTabs = [],
   servicesGlance,
   bodyDisclosure = SITE.referralDisclosure,
-  comparison,
 }) {
   const displayName = brandMark || name;
 
@@ -237,7 +236,7 @@ export default function ProviderPage({
         </section>
       )}
 
-      <ProviderComparisonTable title={comparison?.title} columns={comparison?.columns} />
+      <ProviderComparisonTable />
       <ProviderFaq faqs={faqs} />
 
       <section className="w-full bg-[#eef5f7] border-t border-[var(--line)]">
