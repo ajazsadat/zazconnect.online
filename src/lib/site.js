@@ -37,6 +37,12 @@ export const SITE = {
   get supportPageDisclosure() {
     return `${this.referralDisclosure} We help you evaluate internet and TV plans available in your area. We do not sell or manage carrier accounts directly.`;
   },
+  get comparePageDisclosure() {
+    return `${this.supportPageDisclosure} ${this.carrierDisclaimer} For billing or existing account support, please contact your provider directly.`;
+  },
+  get connectPageDisclosure() {
+    return `${this.referralDisclosure} We do not own or operate any internet network and do not provide carrier account support. For billing, outages, or technical issues with an existing service, contact your provider through their official channels.`;
+  },
   beforeFooterDisclaimer:
     "Maverick Wells Inc operates as an independent comparison platform that helps users explore and evaluate Internet and TV plans from multiple trusted providers. We do not directly sell, install, or manage any Internet or TV services.",
   footerOfferDisclosures: [

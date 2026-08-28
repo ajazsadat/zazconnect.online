@@ -141,13 +141,16 @@ export default function Home() {
               fulfilled and billed directly by licensed carriers.
             </p>
           </div>
-          <div className="mt-12 grid md:grid-cols-3 gap-8">
-            {pillars.map((item) => (
-              <div key={item.title} className="border-t-2 border-teal pt-5">
-                <h3 className="font-display text-xl font-bold text-ink mb-2">{item.title}</h3>
-                <p className="text-muted text-sm leading-relaxed">{item.body}</p>
-              </div>
-            ))}
+          <div id="choose-us" className="mt-14 scroll-mt-28">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mb-8">Why Customers Choose Us</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {pillars.map((item) => (
+                <div key={item.title} className="border-t-2 border-teal pt-5">
+                  <h3 className="font-display text-xl font-bold text-ink mb-2">{item.title}</h3>
+                  <p className="text-muted text-sm leading-relaxed">{item.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -166,7 +169,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 soft-grid border-b border-[var(--line)]">
+      <section id="services" className="py-20 soft-grid border-b border-[var(--line)] scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl font-bold text-ink mb-3">What you can compare</h2>
           <p className="text-muted mb-10 max-w-2xl">

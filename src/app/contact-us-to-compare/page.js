@@ -1,4 +1,4 @@
-import ContactUsToCompareClient from './ContactUsToCompareClient';
+import ConnectOptions from '@/components/ConnectOptions';
 import { SITE } from '@/lib/site';
 
 export const metadata = {
@@ -7,5 +7,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <ContactUsToCompareClient />;
+  return <ConnectOptions disclosure={SITE.connectPageDisclosure} showAddress />;
 }
