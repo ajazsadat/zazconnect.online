@@ -1,5 +1,4 @@
 import ProviderPage from '@/components/ProviderPage';
-import { AT_T_VS_CABLE_COMPARISON } from '@/components/ProviderComparisonTable';
 import { providerFaqs, providerContentSections } from '@/lib/providerContent';
 
 export const metadata = {
@@ -15,7 +14,6 @@ export default function AttPage() {
       brandMark="AT&T Fiber"
       tagline="Compare AT&T fiber and wireless home internet options available in your area."
       introTitle="Compare AT&T Fiber internet packages — independent comparison"
-      comparison={AT_T_VS_CABLE_COMPARISON}
       benefits={[
         'Strong fiber network where available',
         'No data caps on many fiber plans',

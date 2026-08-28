@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { SITE } from '@/lib/site';
 import ProviderFaq from '@/components/ProviderFaq';
 import ProviderComparisonTable from '@/components/ProviderComparisonTable';
+import OfferTerms from '@/components/OfferTerms';
 import ProviderTopicTabs from '@/components/ProviderTopicTabs';
 import ContactForm from '@/components/ContactForm';
 
@@ -69,7 +70,6 @@ export default function ProviderPage({
   topicTabs = [],
   servicesGlance,
   bodyDisclosure = SITE.referralDisclosure,
-  comparison,
 }) {
   const displayName = brandMark || name;
 
@@ -161,6 +161,7 @@ export default function ProviderPage({
               {plansNote ||
                 `*Pricing may vary by ZIP code and is subject to change. Details shown are based on publicly available ${name} information and may not reflect current offers. Taxes, fees, and equipment costs are extra.`}
             </p>
+            <OfferTerms providerName={name} />
           </div>
           <div className="divide-y divide-[var(--line)] border border-[var(--line)]">
             {plans.map((plan) => (
@@ -237,7 +238,7 @@ export default function ProviderPage({
         </section>
       )}
 
-      <ProviderComparisonTable title={comparison?.title} columns={comparison?.columns} />
+      <ProviderComparisonTable />
       <ProviderFaq faqs={faqs} />
 
       <section className="w-full bg-[#eef5f7] border-t border-[var(--line)]">
