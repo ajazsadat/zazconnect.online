@@ -62,11 +62,8 @@ export default function ConnectOptions({ disclosure, showAddress = false }) {
         <div className="relative mx-auto flex w-full max-w-4xl flex-1 flex-col items-center px-4 py-10 sm:px-6 sm:py-14">
           <h1 className="max-w-3xl text-center font-display text-[26px] font-extrabold leading-tight tracking-tight text-ink sm:text-4xl">
             How would you like to connect
-            <span className="block">for Internet Services and Assistance?</span>
+            <span className="block">for Internet and TV Services?</span>
           </h1>
-          <p className="mt-3 max-w-xl text-center text-[15px] leading-relaxed text-muted sm:text-base">
-            Pick whichever is easiest — we&apos;ll help you compare internet and TV plans available at your address.
-          </p>
 
           <div className="mt-8 grid w-full gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5">
             <div className={cardClass}>
