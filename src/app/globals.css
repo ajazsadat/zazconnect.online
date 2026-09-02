@@ -45,6 +45,14 @@ body {
   font-family: var(--font-display), var(--font-body), system-ui, sans-serif;
 }
 
+.font-poppins {
+  font-family: var(--font-poppins), var(--font-body), system-ui, sans-serif;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat), var(--font-body), system-ui, sans-serif;
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;
