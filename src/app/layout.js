@@ -1,4 +1,4 @@
-import { Outfit, Source_Sans_3 } from 'next/font/google';
+import { Outfit, Source_Sans_3, Poppins, Montserrat } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/Header';
@@ -16,6 +16,19 @@ const body = Source_Sans_3({
   weight: ['400', '500', '600', '700'],
 });
 
+/** Used only by the agent landing pages, which follow their own type scale. */
+const poppins = Poppins({
+  variable: '--font-poppins',
+  subsets: ['latin'],
+  weight: ['600', '700'],
+});
+
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
+  subsets: ['latin'],
+  weight: ['600'],
+});
+
 export const metadata = {
   title: 'ZazConnect | Compare Ultra-Fast Internet & Premium TV Plans',
   description:
@@ -27,7 +40,11 @@ const GTM_ID = 'GTM-PH8WX2Q2';
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} h-full antialiased`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${display.variable} ${body.variable} ${poppins.variable} ${montserrat.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
       {/* Extensions like Grammarly inject attributes into body before hydration */}
       <body
         className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]"
