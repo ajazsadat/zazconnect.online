@@ -1,4 +1,4 @@
-import ConnectOptions from '@/components/ConnectOptions';
+import LiveAgentConnect from '@/components/LiveAgentConnect';
 import { SITE } from '@/lib/site';
 
 export const metadata = {
@@ -7,5 +7,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <ConnectOptions disclosure={SITE.comparePageDisclosure} showAddress />;
+  return <LiveAgentConnect disclosure={SITE.comparePageDisclosure} showAddress />;
 }
