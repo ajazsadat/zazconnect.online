@@ -41,8 +41,8 @@ export default function LiveAgentConnect({ disclosure, showAddress = false }) {
       <div className="mx-auto flex w-full max-w-[1340px] flex-1 flex-col px-2.5 pb-[18px] pt-2 md:py-[30px]">
         <div className="flex w-full flex-col items-center pt-4 md:pt-0">
           <h1 className="max-w-[97%] text-center font-poppins text-[24px] font-bold capitalize leading-[29px] text-black md:max-w-[67%] md:text-[45px] md:leading-[54px]">
-            How would you like to connect for{' '}
-            <span className="text-[#5A23B9]">Internet and TV Services?</span>
+            How would you prefer to connect with us for{' '}
+            <span className="text-[#5A23B9]">Cable, Internet Services, and Assistance?</span>
           </h1>
           <Image
             src="/images/support/underline.png"
