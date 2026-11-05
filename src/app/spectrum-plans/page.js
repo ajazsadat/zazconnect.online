@@ -66,13 +66,13 @@ export default function SpectrumPage() {
         },
         {
           name: 'Spectrum Premier',
-          price: '50',
+          price: '40',
           speed: 'Up to 500 Mbps download, 20 Mbps upload',
           features: ['HD streaming and moderate gaming', 'No term contract required', 'Modem included'],
         },
         {
           name: 'Spectrum Gig',
-          price: '70',
+          price: '60',
           speed: 'Up to 1,000 Mbps download, ~35 Mbps upload',
           features: ['Heavy users and 4K streaming', 'No term contract required', 'Modem included'],
         },
