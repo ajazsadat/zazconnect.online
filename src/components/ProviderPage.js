@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { SITE } from '@/lib/site';
 import ProviderFaq from '@/components/ProviderFaq';
-import ProviderComparisonTable from '@/components/ProviderComparisonTable';
 import OfferTerms from '@/components/OfferTerms';
 import ProviderTopicTabs from '@/components/ProviderTopicTabs';
 import ContactForm from '@/components/ContactForm';
@@ -62,6 +61,8 @@ export default function ProviderPage({
   tagline,
   heroTitle,
   introTitle,
+  introBody,
+  closingBody,
   benefits = [],
   plansNote,
   plans = [],
@@ -140,8 +141,12 @@ export default function ProviderPage({
             {introTitle || `Compare ${displayName} with ${SITE.brandFull}`}
           </h2>
           <p className="text-muted leading-relaxed">
-            {bodyDisclosure} Call to compare providers — we help you review {name} options alongside other providers so
-            you can choose what fits, then enroll directly with the provider.
+            {introBody || (
+              <>
+                {bodyDisclosure} Call to compare providers — we help you review {name} options alongside other
+                providers so you can choose what fits, then enroll directly with the provider.
+              </>
+            )}
           </p>
         </div>
         <ul className="space-y-3">
@@ -181,11 +186,16 @@ export default function ProviderPage({
                   </ul>
                 </div>
                 <div className="md:text-right">
-                  <p className="text-xs uppercase tracking-wider text-muted">From</p>
+                  {plan.priceLabel !== '' && (
+                    <p className="text-xs uppercase tracking-wider text-muted">{plan.priceLabel || 'From'}</p>
+                  )}
                   <p className="font-display text-3xl font-bold text-ink">
                     ${plan.price}
                     <span className="text-base font-medium text-muted">/mo*</span>
                   </p>
+                  {plan.priceTerm && (
+                    <p className="text-xs uppercase tracking-wider text-muted">{plan.priceTerm}</p>
+                  )}
                 </div>
                 <a
                   href={`tel:${SITE.phoneTel}`}
@@ -204,7 +214,17 @@ export default function ProviderPage({
           {contentSections.map((section) => (
             <div key={section.title} className="grid md:grid-cols-[220px_1fr] gap-4 md:gap-10">
               <h3 className="font-display text-xl font-bold text-ink">{section.title}</h3>
-              <p className="text-muted leading-relaxed">{section.body}</p>
+              <div>
+                {section.body && <p className="text-muted leading-relaxed">{section.body}</p>}
+                {section.linkLabel && (
+                  <a
+                    href={section.linkHref || `tel:${SITE.phoneTel}`}
+                    className={`${section.body ? 'mt-3 ' : ''}inline-flex text-sm font-semibold text-teal hover:underline`}
+                  >
+                    {section.linkLabel}
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </section>
@@ -228,8 +248,18 @@ export default function ProviderPage({
                     <ServiceGlanceIcon name={item.icon} />
                   </span>
                   <div>
+                    {item.eyebrow && (
+                      <p className="text-xs font-semibold uppercase tracking-wider text-teal mb-1">{item.eyebrow}</p>
+                    )}
                     <h3 className="font-display text-xl font-bold text-ink mb-2">{item.title}</h3>
-                    <p className="text-muted text-[15px] leading-relaxed">{item.body}</p>
+                    {item.body && <p className="text-muted text-[15px] leading-relaxed">{item.body}</p>}
+                    {item.points?.length > 0 && (
+                      <ul className="space-y-1 text-muted text-[15px] leading-relaxed">
+                        {item.points.map((point) => (
+                          <li key={point}>• {point}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
               ))}
@@ -238,7 +268,6 @@ export default function ProviderPage({
         </section>
       )}
 
-      <ProviderComparisonTable />
       <ProviderFaq faqs={faqs} />
 
       <section className="w-full bg-[#eef5f7] border-t border-[var(--line)]">
@@ -249,7 +278,8 @@ export default function ProviderPage({
                 Why Choose <span className="text-teal">{SITE.brandFull}</span>?
               </h2>
               <p className="text-muted text-base md:text-lg leading-relaxed mb-8">
-                {`Getting ${displayName} Internet & Cable Services is easier with ${SITE.brandFull}. Call to compare providers, understand features and pricing, and select the option that works best for your home or business. Our team guides you every step of the way — clear, reliable, and hassle-free.`}
+                {closingBody ||
+                  `Getting ${displayName} Internet & Cable Services is easier with ${SITE.brandFull}. Call to compare providers, understand features and pricing, and select the option that works best for your home or business. Our team guides you every step of the way — clear, reliable, and hassle-free.`}
               </p>
               <a
                 href={`tel:${SITE.phoneTel}`}
