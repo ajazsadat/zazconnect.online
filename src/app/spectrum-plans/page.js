@@ -87,27 +87,16 @@ export default function SpectrumPage() {
           ],
         },
         {
-          name: 'Spectrum Internet 500',
+          name: 'Spectrum Premier',
           price: '40',
-          ...YEAR_ONE,
-          features: [
-            'Speeds up to 500 Mbps',
-            'Powers seamless work and entertainment across multiple devices',
-            'High-speed Internet with no data caps',
-            'Save more when you bundle Internet with other Spectrum services',
-          ],
+          speed: 'Up to 500 Mbps download, 20 Mbps upload',
+          features: ['HD streaming and moderate gaming', 'No term contract required', 'Modem included'],
         },
         {
-          name: 'Spectrum Internet 1 Gig',
+          name: 'Spectrum Gig',
           price: '60',
-          ...YEAR_ONE,
-          features: [
-            'Includes Advanced WiFi',
-            'Speeds up to 1 Gig (1 Gbps)',
-            'Fuels serious gaming, streaming and working from home for the whole household',
-            'For fast performance, choose Internet Gig',
-            'Save more when you bundle Internet with other Spectrum services',
-          ],
+          speed: 'Up to 1,000 Mbps download, ~35 Mbps upload',
+          features: ['Heavy users and 4K streaming', 'No term contract required', 'Modem included'],
         },
       ]}
       contentSections={[
